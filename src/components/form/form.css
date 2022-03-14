@@ -1,0 +1,70 @@
+/* forms
+=====================*/
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form__title {
+    margin-top: 50px;
+    line-height: 33px;
+
+}
+
+.form__subtitle {
+    font-family: 'Roboto', sans-serif;
+    color: #a8a8a7;
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    line-height: 33px;
+}
+
+
+.form__inner {
+    display: flex;
+    flex-direction: column;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+
+
+}
+
+.form__label {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.form__name {
+    padding: 0 10px;
+    margin-top: 10px;
+    height: 38px;
+    background-color: #dddddd;
+    border: none;
+    border-radius: 10px;
+    
+
+}
+
+
+.form__comment {
+    height: 134px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    background-color: #dddddd;
+    border: none;
+    resize: none;
+    border-radius: 10px;
+}
+
+.btn__send {
+    padding: 5px 18px;
+    margin: 30px auto;
+    
+    border: none;
+
+}

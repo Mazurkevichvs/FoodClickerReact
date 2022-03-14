@@ -1,0 +1,52 @@
+.cafe__header {
+    margin-bottom: 60px;
+  
+  }
+  
+  .cafe__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 65px 0;
+  }
+  
+  .cafe__map {
+   width: 387px;
+    height: 200px;
+  }
+  
+  .btn__order {
+    display: flex;
+    padding: 10px 13px;
+    border-radius: 30px;
+    max-width: 270px;
+    margin-right: 53px;
+    margin-left: 53px;
+  }
+  
+  .btn__call {
+    margin-right: 12px;
+  }
+  
+  .btn__order p {
+    text-align: center;
+  }
+  
+  .cafe__outer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  
+  }
+  
+  .cafe__logo {
+    max-width: 33.333%;
+    
+  }
+  
+  .cafe__outer img {
+    width: 32%;
+    margin-bottom: 27px;
+  }
+  

@@ -1,0 +1,31 @@
+/* footer
+=====================*/
+.footer {
+    background-color: #e20613;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+.footer__logos {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer__contacts {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 40px;
+    color: #ffffff;
+    text-decoration: none;
+}

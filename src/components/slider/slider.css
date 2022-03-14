@@ -1,0 +1,33 @@
+/* swiper
+=====================*/
+
+.swiper {
+    max-width: 1180px;
+    width: 100%;
+    margin-bottom: 60px;  
+    z-index: 0; 
+    max-height: 500px;
+     
+  }
+  
+  .swiper-slide img {
+    max-width: 1180px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  
+  }
+  
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    color: #fff;    
+  }
+  
+  .swiper-pagination-bullet {    
+    width: 15px;
+    height: 15px;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }

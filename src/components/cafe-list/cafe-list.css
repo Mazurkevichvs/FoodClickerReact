@@ -1,0 +1,57 @@
+.offer {
+    border-bottom: 2px solid #a8a8a7;
+}
+
+.offer__title {
+    margin-bottom: 45px;
+}
+
+.offer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+}
+
+.offer__cafe {
+    max-width: 362px;
+    width: 30%;
+    margin-bottom: 30px;
+
+
+}
+
+.offer__link {
+    position: relative;
+    height: 241px;
+    border: 1px solid #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.offer__link img {
+   position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    max-height: 200px;
+    max-width: 100%;
+}
+
+.offer__name {
+    text-transform: uppercase;
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+}
+
+.offer__description {
+    text-align: left;
+    line-height: 1.5;
+
+
+}
