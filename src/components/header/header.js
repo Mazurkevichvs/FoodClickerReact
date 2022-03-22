@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './header.css';
 
 
@@ -21,7 +22,7 @@ function Header({togglePopup}) {
                         <a className="link__food" href="">FoodClicker</a>
                     </div>
                 </div>
-                <a className="foodclicker" href="#"><img src="/img/fc_logo.png" alt="foodclicker"></img></a>
+                <Link className="foodclicker" to="/"><img src="/img/fc_logo.png" alt="foodclicker"></img></Link>
                 <a onClick={togglePopup} className="btn btn__login" href="#">Zaloguj się!</a>
             </div>
         </div>
