@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import './header.css';
 
 
-
-
-
-function Header({togglePopup}) {
+function Header({setVisiblePopup}) {
     
     return(
         <header className="header">
@@ -23,7 +20,7 @@ function Header({togglePopup}) {
                     </div>
                 </div>
                 <Link className="foodclicker" to="/"><img src="/img/fc_logo.png" alt="foodclicker"></img></Link>
-                <a onClick={togglePopup} className="btn btn__login" href="#">Zaloguj się!</a>
+                <button onClick={() => setVisiblePopup(true)} className="btn btn__login">Zaloguj się!</button>
             </div>
         </div>
     </header>

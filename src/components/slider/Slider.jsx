@@ -21,7 +21,7 @@ function Slider() {
     }
 
     return(  
-        <section class="swiper">
+        <section className="swiper">
             <Swiper className="swiper-wrapper" 
             modules={[Navigation, Pagination]}
             slidesPerView={1}

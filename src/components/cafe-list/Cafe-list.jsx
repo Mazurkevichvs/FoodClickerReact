@@ -1,5 +1,5 @@
 import React from "react";
-import CafeItem from "../cafe-item/cafe-item";
+import CafeItem from "../cafe-item/Cafe-item";
 import './cafe-list.css';
 
 function CafeList({cafes}) {
