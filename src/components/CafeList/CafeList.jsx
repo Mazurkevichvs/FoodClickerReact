@@ -1,11 +1,11 @@
 import React from "react";
-import CafeItem from "../cafe-item/Cafe-item";
-import './cafe-list.css';
+import CafeListItem from "../CafeListItem/CafeListItem";
+import './CafeList.css';
 
 function CafeList({cafes}) {
 
     let element = cafes.map(el => {
-        return <CafeItem 
+        return <CafeListItem 
         key={el.key}
         name={el.name}
         desc={el.desc}

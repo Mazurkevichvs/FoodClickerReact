@@ -1,21 +1,21 @@
 import React, {useRef, useEffect} from 'react';
-import './popup-form.css'
+import './PopupForm.css'
 
 
 function PopupForm({togglePopup, closePopup}) {
 const modal = useRef()
 
 const clickOutside = (e) => {
-    
-    if(!e.path.includes(modal.current) && modal.current != null) {
+    if(modal.current && !modal.current.contains(e.target)) {
+        console.log('click outside')
         closePopup()
-    }
-        
+    }   
 }
 
 useEffect(() => {
-    document.body.addEventListener('click', clickOutside);
-}, [])
+    document.addEventListener('click', clickOutside);
+    return () => document.removeEventListener('click', clickOutside)
+}, [modal])
 
   return (
       

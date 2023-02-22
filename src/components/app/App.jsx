@@ -1,8 +1,8 @@
 import React from 'react';
-import { Routes, Route, Link} from "react-router-dom";
-import './app.css';
+import { Routes, Route} from "react-router-dom";
+import './App.css';
 import Home from '../../pages/Home'
-import Cafe1 from '../cafe-1/Cafe-1';
+import Cafe from '../Cafe/Cafe';
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <>    
         <Routes>
             <Route path="/" element = {<Home/>}/>
-            <Route path="/cafe1" element = {<Cafe1/>}/>
+            <Route path="/Cafe" element = {<Cafe/>}/>
         </Routes>
         </>
     )

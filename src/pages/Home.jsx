@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Slider from '../components/slider/Slider';
-import CafeList from '../components/cafe-list/Cafe-list';
-import Form from '../components/form/Form';
-import Header from '../components/header/Header';
-import Footer from '../components/footer/Footer';
-import PopupForm from '../components/popup-form/Popup-form';
+import Slider from '../components/Slider/Slider';
+import CafeList from '../components/CafeList/CafeList';
+import Form from '../components/Form/Form';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import PopupForm from '../components/PopupForm/PopupForm';
 
 function Home() {
   const [visiblePopup, setVisiblePopup] = useState(false)
@@ -14,7 +14,6 @@ function Home() {
   };
 
   const togglePopup = () => {
-    console.log(123);
     setVisiblePopup(!visiblePopup);
   }
 
