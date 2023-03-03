@@ -6,7 +6,7 @@ function CafeListItem({name, desc, pic}) {
 return(
     <div className="offer__cafe">
         <div className="offer__link">
-            <Link to="/Cafe"><img src={`img/${pic}`} alt="kredens"/></Link>
+            <Link to="/cafe"><img src={`img/${pic}`} alt="kredens"/></Link>
         </div>
         <h2 className="offer__name">{name}</h2>
         <p className="offer__description">{desc}</p>
