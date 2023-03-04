@@ -1,7 +1,7 @@
 import React from 'react';
 import './Form.css';
 
-function Form() {
+const Form = () => {
   return (
     <div className="container">
       <section id="form" className="form">

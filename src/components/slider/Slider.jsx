@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 
 SwiperCore.use([Navigation, Pagination]);
 
-function Slider() {
+const Slider = () => {
     const slides = [];
     for(let i = 1; i < 5; i++) {
         slides.push(

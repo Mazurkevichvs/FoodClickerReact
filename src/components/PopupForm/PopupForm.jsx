@@ -2,12 +2,11 @@ import React, {useRef, useEffect} from 'react';
 import './PopupForm.css'
 
 
-function PopupForm({togglePopup, closePopup}) {
+const PopupForm = ({closePopup}) => {
 const modal = useRef()
 
 const clickOutside = (e) => {
     if(modal.current && !modal.current.contains(e.target)) {
-        console.log('click outside')
         closePopup()
     }   
 }
@@ -24,7 +23,7 @@ useEffect(() => {
             <div ref={modal} className="modal__content">
                 <div className="modal__header">
                     <h1 className="modal__title">Zaloguj się:</h1>
-                    <a onClick={togglePopup} href="#" className="modal__close">&times;</a>    
+                    <a onClick={closePopup} href="#" className="modal__close">&times;</a>    
                 </div>
                 <div className="modal__body">
                 <form className="modal__form" >

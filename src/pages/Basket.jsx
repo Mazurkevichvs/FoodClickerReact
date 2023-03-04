@@ -30,7 +30,7 @@ const Basket = () => {
               </div>
               <div className="basket__order">
                 <div className="order__name">
-                  <img className="order__img" src="img/cafe-1/feta.png" alt="feta" />
+                  <img className="order__img" src="img/feta.png" alt="feta" />
                   <div className="order__info">
                     <h3 className="order__title">Sałatka Feta</h3>
                     <h4 className="order__subtitle">1 x 16zł</h4>
@@ -48,7 +48,7 @@ const Basket = () => {
               </div>
               <div className="basket__order">
                 <div className="order__name">
-                  <img className="order__img" src="img/cafe-1/feta.png" alt="feta" />
+                  <img className="order__img" src="img/feta.png" alt="feta" />
                   <div className="order__info">
                     <h3 className="order__title">Sałatka Feta</h3>
                     <h4 className="order__subtitle">1 x 16zł</h4>
@@ -66,7 +66,7 @@ const Basket = () => {
               </div>
               <div className="basket__order">
                 <div className="order__name">
-                  <img className="order__img" src="img/cafe-1/feta.png" alt="feta" />
+                  <img className="order__img" src="img/feta.png" alt="feta" />
                   <div className="order__info">
                     <h3 className="order__title">Sałatka Feta</h3>
                     <h4 className="order__subtitle">1 x 16zł</h4>
