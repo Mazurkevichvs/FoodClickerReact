@@ -4,6 +4,12 @@ import './App.css';
 import Home from './pages/Home';
 import Cafe from './components/Cafe/Cafe';
 import Basket from './pages/Basket';
+//make Registration component
+//Basket with components
+//Cafe to page
+//Rebuild Cafe with buy buttons
+//Button component instead of links
+//Cafe logic in redux
 
 const App = () => {
   
