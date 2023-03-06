@@ -1,9 +1,5 @@
 import React from 'react';
-import Slider from '../components/Slider/Slider';
-import CafeList from '../components/CafeList/CafeList';
-import Form from '../components/Form/Form';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import {Slider, CafeList, Form, Header, Footer} from '../components/';
 
 function Home({ data }) {
   

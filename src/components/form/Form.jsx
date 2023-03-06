@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from '../';
 import './Form.css';
 
 const Form = () => {
@@ -26,7 +27,7 @@ const Form = () => {
             Wiadomość
           </label>
           <textarea className="form__comment" name="message" id="comment" required></textarea>
-          <button className="btn btn__send">WYŚLIJ</button>
+          <Button className={"btn__send"} name={'WYŚLIJ'} />
         </form>
       </section>
     </div>

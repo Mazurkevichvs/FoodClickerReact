@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import PopupForm from '../PopupForm/PopupForm'
-import './Header.css'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, PopupForm } from '../';
+import './Header.css';
 
 const Header = () => {
-  const [visiblePopup, setVisiblePopup] = useState(false)
+  const [visiblePopup, setVisiblePopup] = useState(false);
   const closePopup = () => {
-    setVisiblePopup(false)
-  }
-
+    setVisiblePopup(false);
+  };
   return (
     <>
       <header className="header">
@@ -33,9 +32,11 @@ const Header = () => {
             <Link className="foodclicker" to="/">
               <img src="/img/fc_logo.png" alt="foodclicker"></img>
             </Link>
-            <button onClick={() => setVisiblePopup(true)} className="btn btn__login">
-              Zaloguj się!
-            </button>
+            <Button
+              onClick={() => setVisiblePopup(true)}
+              className={'btn__login'}
+              name={'Zaloguj się!'}
+            />
           </div>
         </div>
       </header>

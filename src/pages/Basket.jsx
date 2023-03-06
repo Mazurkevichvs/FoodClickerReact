@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from '../components/Header/Header';
+import {Button, Header} from '../components/';
+import './Basket.css'
 
 const Basket = () => {
   return (
@@ -86,9 +87,7 @@ const Basket = () => {
             <div className="basket__payment">
               <h2 className="payment__title">Do zapłaty:</h2>
               <p className="payment__price">64zł</p>
-              <a href="#" className="btn btn__pay">
-                Przejdź do płatności
-              </a>
+              <Button className={"btn__pay"} name={'Przejdź do płatności'}/>
             </div>
           </section>
         </div>

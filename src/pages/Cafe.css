@@ -16,22 +16,6 @@
     height: 200px;
   }
   
-  .btn__order {
-    display: flex;
-    padding: 10px 13px;
-    border-radius: 30px;
-    max-width: 270px;
-    margin-right: 53px;
-    margin-left: 53px;
-  }
-  
-  .btn__call {
-    margin-right: 12px;
-  }
-  
-  .btn__order p {
-    text-align: center;
-  }
   
   .cafe__outer {
     display: flex;
