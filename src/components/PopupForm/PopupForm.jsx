@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import Button from '../Button/Button';
+import Input from '../Input/Input';
 import './PopupForm.css';
 
 const PopupForm = ({ closePopup }) => {
@@ -28,10 +29,8 @@ const PopupForm = ({ closePopup }) => {
           </div>
           <div className="modal__body">
             <form className="modal__form">
-              <label className="form__label">Login lub E-Mail:</label>
-              <input type="text" className="form__name" />
-              <label className="form__label">Hasło:</label>
-              <input type="text" className="form__name" />
+              <Input label={'Login lub E-Mail:'} id={'login'} name={"login"}/>
+              <Input label={'Hasło:'} id={'password'} name={"password"}/>
               <a className="modal__link" href="#">
                 Nie pamiętasz hasła?
               </a>

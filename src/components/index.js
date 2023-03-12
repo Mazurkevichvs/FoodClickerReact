@@ -6,3 +6,4 @@ export {default as Form} from './Form/Form';
 export {default as Header} from './Header/Header';
 export {default as PopupForm} from './PopupForm/PopupForm';
 export {default as Slider} from './Slider/Slider';
+export {default as Input} from './Input/Input';

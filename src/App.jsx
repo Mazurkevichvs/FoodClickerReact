@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import {Home, Basket, Cafe} from './pages';
+import {Home, Basket, Cafe, Registration} from './pages';
 
 //make Registration component
 //Basket with components
@@ -43,6 +43,7 @@ const App = () => {
         />
         <Route path="/cafe/:id" element={<Cafe />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/registration" element={<Registration />} />
       </Routes>
     </>
   );

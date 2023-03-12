@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from '../';
+import { Button, Input } from '../';
 import './Form.css';
 
 const Form = () => {
@@ -15,23 +15,17 @@ const Form = () => {
           <input type="hidden" name="form_subject" value="Oferta" />
           {/* <!-- END Hidden Required Fields --> */}
 
-          <label className="form__label" htmlFor="username">
-            Imię i Nazwisko
-          </label>
-          <input type="text" name="Name" className="form__name" id="username" required />
-          <label className="form__label" htmlFor="email">
-            Adres E-mail
-          </label>
-          <input type="text" name="e-mail" className="form__name" id="email" required />
+          <Input label={'Imię i Nazwisko'} id={'username'} name={'Name'} />
+          <Input label={'Adres E-mail'} id={'email'} name={'e-mail'} />
           <label htmlFor="comment" className="form__label">
             Wiadomość
           </label>
           <textarea className="form__comment" name="message" id="comment" required></textarea>
-          <Button className={"btn__send"} name={'WYŚLIJ'} />
+          <Button className={'btn__send'} name={'WYŚLIJ'} />
         </form>
       </section>
     </div>
   );
-}
+};
 
 export default Form;

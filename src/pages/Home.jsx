@@ -9,7 +9,7 @@ function Home({ data }) {
       <main className="main">
         <div className="container">
           <section className="about">
-            <h1 className="about__title">O NAS</h1>
+            <h1 className="title">O NAS</h1>
             <p className="about__subtitle">
               Chcesz zaoszczędzić i smacznie zjeść?
               <br />
