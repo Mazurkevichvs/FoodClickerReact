@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import './PopupForm.css';
@@ -23,28 +24,28 @@ const PopupForm = ({ closePopup }) => {
         <div ref={modal} className="modal__content">
           <div className="modal__header">
             <h1 className="modal__title">Zaloguj się:</h1>
-            <a onClick={closePopup} href="#" className="modal__close">
+            <div onClick={closePopup} className="modal__close">
               &times;
-            </a>
+            </div>
           </div>
           <div className="modal__body">
             <form className="modal__form">
               <Input label={'Login lub E-Mail:'} id={'login'} name={"login"}/>
               <Input label={'Hasło:'} id={'password'} name={"password"}/>
-              <a className="modal__link" href="#">
+              <p className="modal__link" href="#">
                 Nie pamiętasz hasła?
-              </a>
+              </p>
               <div className="modal__buttons">
                 <Button name={'Zaloguj się'} />
                 <p>lub</p>
-                <Button name={'Zarejestruj się'} />
+                <Link to={'/registration'}><Button name={'Zarejestruj się'} /></Link>
               </div>
-              <a href="#" className="login__img">
+              <div href="#" className="login__img">
                 <img src="img/loginfacebook.png" alt="SIgn up with Facebook" />
-              </a>
-              <a href="#" className="login__img">
+              </div>
+              <div href="#" className="login__img">
                 <img src="img/googlesingup.png" alt="Sing up with Google" />
-              </a>
+              </div>
             </form>
           </div>
         </div>

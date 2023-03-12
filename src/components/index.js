@@ -7,3 +7,4 @@ export {default as Header} from './Header/Header';
 export {default as PopupForm} from './PopupForm/PopupForm';
 export {default as Slider} from './Slider/Slider';
 export {default as Input} from './Input/Input';
+export {default as BasketItem} from './BasketItem/BasketItem';

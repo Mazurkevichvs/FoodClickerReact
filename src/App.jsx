@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { Footer, Header } from './components';
 import {Home, Basket, Cafe, Registration} from './pages';
 
-//make Registration component
 //Basket with components
 //Rebuild Cafe with buy buttons
 //Cafe logic in redux
@@ -36,6 +36,7 @@ const App = () => {
 
   return (
     <>
+    <Header/>
       <Routes>
         <Route
           path="/"
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/basket" element={<Basket />} />
         <Route path="/registration" element={<Registration />} />
       </Routes>
+      <Footer/>
     </>
   );
 };

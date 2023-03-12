@@ -1,11 +1,10 @@
 import React from 'react';
-import { Button, Footer, Header } from '../components';
+import { Button } from '../components';
 import './Cafe.css';
 
 const Cafe = () => {
   return (
     <>
-      <Header />
       <main className="main">
         <div className="container">
           <section className="cafe__header">
@@ -27,7 +26,6 @@ const Cafe = () => {
           </section>
         </div>
       </main>
-      <Footer />
     </>
   );
 };

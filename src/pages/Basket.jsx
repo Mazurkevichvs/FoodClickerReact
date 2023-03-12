@@ -1,88 +1,18 @@
 import React from 'react';
-import {Button, Header} from '../components/';
+import {Button, BasketItem} from '../components/';
 import './Basket.css'
 
 const Basket = () => {
   return (
     <>
-      <Header />
       <main>
         <div className="container">
-          <h1 classNameName="basket__title">Twój koszyk:</h1>
+          <h1 className="basket__title">Twój koszyk:</h1>
           <section className="basket">
             <div className="basket__inner">
-              <div className="basket__order">
-                <div className="order__name">
-                  <img className="order__img" src="img/feta.png" alt="feta" />
-                  <div className="order__info">
-                    <h3 className="order__title">Sałatka Feta</h3>
-                    <h4 className="order__subtitle">1 x 16zł</h4>
-                  </div>
-                </div>
-                <div className="order__count">
-                  <button className="count__button">-</button>
-                  <p className="count__quantity">1</p>
-                  <button className="count__button">+</button>
-                </div>
-                <div className="order__price">16zł</div>
-                <a>
-                  <img className="order__delete" src="img/trash.png" alt="delete order" />
-                </a>
-              </div>
-              <div className="basket__order">
-                <div className="order__name">
-                  <img className="order__img" src="img/feta.png" alt="feta" />
-                  <div className="order__info">
-                    <h3 className="order__title">Sałatka Feta</h3>
-                    <h4 className="order__subtitle">1 x 16zł</h4>
-                  </div>
-                </div>
-                <div className="order__count">
-                  <button className="count__button">-</button>
-                  <p className="count__quantity">1</p>
-                  <button className="count__button">+</button>
-                </div>
-                <div className="order__price">16zł</div>
-                <a>
-                  <img className="order__delete" src="img/trash.png" alt="delete order" />
-                </a>
-              </div>
-              <div className="basket__order">
-                <div className="order__name">
-                  <img className="order__img" src="img/feta.png" alt="feta" />
-                  <div className="order__info">
-                    <h3 className="order__title">Sałatka Feta</h3>
-                    <h4 className="order__subtitle">1 x 16zł</h4>
-                  </div>
-                </div>
-                <div className="order__count">
-                  <button className="count__button">-</button>
-                  <p className="count__quantity">1</p>
-                  <button className="count__button">+</button>
-                </div>
-                <div className="order__price">16zł</div>
-                <a>
-                  <img className="order__delete" src="img/trash.png" alt="delete order" />
-                </a>
-              </div>
-              <div className="basket__order">
-                <div className="order__name">
-                  <img className="order__img" src="img/feta.png" alt="feta" />
-                  <div className="order__info">
-                    <h3 className="order__title">Sałatka Feta</h3>
-                    <h4 className="order__subtitle">1 x 16zł</h4>
-                  </div>
-                </div>
-                <div className="order__count">
-                  <button className="count__button">-</button>
-                  <p className="count__quantity">1</p>
-                  <button className="count__button">+</button>
-                </div>
-                <div className="order__price">16zł</div>
-                <a>
-                  <img className="order__delete" src="img/trash.png" alt="delete order" />
-                </a>
-              </div>
+              <BasketItem img={'feta'} title={'Feta'} price={'16zł'} amount={1}/>
+              <BasketItem img={'schab'} title={'Schab'} price={'10zł'} amount={1}/>
+              <BasketItem img={'pizza'} title={'Pizza'} price={'14zł'} amount={1}/>
             </div>
             <div className="basket__payment">
               <h2 className="payment__title">Do zapłaty:</h2>

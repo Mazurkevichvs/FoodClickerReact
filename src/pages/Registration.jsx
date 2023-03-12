@@ -1,27 +1,27 @@
-import React from 'react'
-import { Footer, Header, Input } from '../components'
+import React from 'react';
+import { Button, Input } from '../components';
+import './Registration.css';
 
 const Registration = () => {
   return (
     <>
-    <Header/>
-    <main className='main'>
+      <main className="main">
         <div className="container">
-            <section className='registration'>
-                <h1 className='title'>Rejestracja</h1>
-                <form className="form__inner">
-                    <Input label={'Imię:'} id={'name'} name={'name'}/>
-                    <Input label={'Nazwisko:'} id={'surname'} name={'surname'}/>
-                    <Input label={'E-Mail:'} id={'email'} name={'email'}/>
-                    <Input label={'Hasło:'} id={'password'} name={'password'}/>
-                    <Input label={'Powtórz hasło:'} id={'password2'} name={'password2'}/>
-                </form>
-            </section>
+          <section className="registration">
+            <h1 className="title reg__title">REJESTRACJA:</h1>
+            <form className="form__inner">
+              <Input label={'Imię:'} id={'name'} name={'name'} />
+              <Input label={'Nazwisko:'} id={'surname'} name={'surname'} />
+              <Input label={'E-Mail:'} id={'email'} name={'email'} />
+              <Input label={'Hasło:'} id={'password'} name={'password'} />
+              <Input label={'Powtórz hasło:'} id={'password2'} name={'password2'} />
+              <Button name={'Zarejestruj się'} className={'btn__send'} />
+            </form>
+          </section>
         </div>
-    </main>
-    <Footer/>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default Registration
+export default Registration;

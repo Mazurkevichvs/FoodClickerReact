@@ -1,11 +1,10 @@
 import React from 'react';
-import {Slider, CafeList, Form, Header, Footer} from '../components/';
+import {Slider, CafeList, Form} from '../components/';
 
 function Home({ data }) {
   
   return (
     <>
-      <Header/>
       <main className="main">
         <div className="container">
           <section className="about">
@@ -23,7 +22,6 @@ function Home({ data }) {
         <CafeList cafes={data} />
         <Form />
       </main>
-      <Footer />
     </>
   );
 }

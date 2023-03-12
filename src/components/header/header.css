@@ -4,6 +4,7 @@
 .header {
     width: 100%;
     border-bottom: 2px solid #a8a8a7;
+    top: 0;
 }
 
 .header__inner {

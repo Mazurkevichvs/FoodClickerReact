@@ -10,8 +10,12 @@ body {
   font-size: 14px;
   color: #a8a8a7;
   letter-spacing: .25px;
+}
 
-
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 *,
@@ -47,17 +51,6 @@ h2 {
 
 }
 
-
-/* REGISTRATION.HTML
-=====================*/
-
-.reg__title {
-  text-align: left;
-  margin: 0 auto;
-  padding-top: 30px;
-  
-  
-}
 
 /* MEDIA    1080px
 =====================*/
