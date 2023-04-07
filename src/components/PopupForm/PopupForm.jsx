@@ -38,7 +38,7 @@ const PopupForm = ({ closePopup }) => {
               <div className="modal__buttons">
                 <Button name={'Zaloguj się'} />
                 <p>lub</p>
-                <Link to={'/registration'}><Button name={'Zarejestruj się'} /></Link>
+                <Link to={'/registration'}><Button name={'Zarejestruj się'} onClick={closePopup}/></Link>
               </div>
               <div href="#" className="login__img">
                 <img src="img/loginfacebook.png" alt="SIgn up with Facebook" />

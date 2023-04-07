@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components';
 import './Cafe.css';
 
@@ -10,7 +11,7 @@ const Cafe = () => {
           <section className="cafe__header">
             <div className="cafe__inner">
               <img className="cafe__logo" src="/img/laguna_logo.png" alt="laguna" />
-              <Button className={'btn__order'} name={'ZAMÓW TERAZ!'} />
+              <Link to={'/basket'}><Button className={'btn__order'} name={'ZAMÓW TERAZ!'} /></Link>
             </div>
             <div className="cafe__outer">
               <img src="/img/schab.png" alt="schab" />
