@@ -1,7 +1,7 @@
 import React from 'react';
 import {Slider, CafeList, Form} from '../components/';
 
-function Home({ data }) {
+function Home({ restaurants }) {
   
   return (
     <>
@@ -19,7 +19,7 @@ function Home({ data }) {
           </section>
         </div>
         <Slider />
-        <CafeList cafes={data} />
+        <CafeList cafes={restaurants} />
         <Form />
       </main>
     </>

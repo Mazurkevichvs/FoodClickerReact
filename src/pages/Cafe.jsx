@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components';
 import './Cafe.css';
+import MenuItem from '../components/MenuItem/MenuItem';
 
-const Cafe = () => {
+const Cafe = ({menu}) => {
+  const [order, setOrder] = useState([]);
+  const menuItem = menu.map((el, id) => <MenuItem key={id} menu={el} order={order} setOrder={setOrder}/>)
   return (
     <>
       <main className="main">
@@ -11,18 +14,12 @@ const Cafe = () => {
           <section className="cafe__header">
             <div className="cafe__inner">
               <img className="cafe__logo" src="/img/laguna_logo.png" alt="laguna" />
-              <Link to={'/basket'}><Button className={'btn__order'} name={'ZAMÓW TERAZ!'} /></Link>
+              <Link to={'/basket'}>
+                <Button className={'btn__order'} name={'ZAMÓW TERAZ!'} />
+              </Link>
             </div>
             <div className="cafe__outer">
-              <img src="/img/schab.png" alt="schab" />
-              <img src="/img/pizza.png" alt="schab" />
-              <img src="/img/szaszlyk.png" alt="schab" />
-              <img src="/img/feta.png" alt="schab" />
-              <img src="/img/omlet.png" alt="schab" />
-              <img src="/img/pasta.png" alt="schab" />
-              <img src="/img/szaszlyczki.png" alt="schab" />
-              <img src="/img/grecka.png" alt="schab" />
-              <img src="/img/salat.png" alt="schab" />
+              {menuItem}
             </div>
           </section>
         </div>

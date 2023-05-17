@@ -1,0 +1,48 @@
+.menu__container {
+    width: 32%;
+    margin-bottom: 27px;
+}
+
+.menu__inner {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.menu__count {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid #e30613 ;
+    border-radius: 10px;
+    padding: 10px;
+    width: 40%;
+}
+
+.menu__count:hover {
+    border: 2px solid #ff0011 ;
+}
+
+/* .menu__count div{
+    padding: 8px 15px;    
+} */
+
+.menu__counter {
+    color: #000;
+    font-size: 22px;
+}
+
+.menu__increment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #e30613;
+}
+
+.menu__increment:hover {
+    color: #ff0011; 
+    border-radius: 50%;
+}

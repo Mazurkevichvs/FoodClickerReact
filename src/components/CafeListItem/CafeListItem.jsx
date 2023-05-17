@@ -6,7 +6,7 @@ const CafeListItem = ({id ,name, desc, pic}) => {
 return(
     <div className="offer__cafe">
         <div className="offer__link">
-            <Link to={`/cafe/${id}`}><img src={`img/${pic}`} alt="kredens"/></Link>
+            <Link to={`/cafe/${id}`}><img src={`img/${pic}`} alt={name}/></Link>
         </div>
         <h2 className="offer__name">{name}</h2>
         <p className="offer__description">{desc}</p>
