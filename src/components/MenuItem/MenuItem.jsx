@@ -16,8 +16,7 @@ const MenuItem = ({ menu, order, setOrder }) => {
       ...menu,
       count,
     };
-    setOrder((order) => [...order, obj]);
-    console.log(order);
+    setOrder(prev => [...prev, obj]);
   };
 
   return (
