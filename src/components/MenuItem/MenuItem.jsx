@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import './MenuItem.css';
+import { useSelector, useDispatch } from 'react-redux'
+import { increaseCount, decreaseCount, setOrder } from '../../redux/slices/basketSlice';
 
-const MenuItem = ({ menu, order, setOrder }) => {
-  const [count, setCount] = useState(0);
-  const increaseItems = () => {
-    setCount(count + 1);
-  };
-  const decreaseItems = () => {
-    if (count === 0) return;
-    setCount(count - 1);
-  };
-
+const MenuItem = ({ menu }) => {
+  const dispatch = useDispatch();
+  const {count} = useSelector(state => state.basketSlice)
   const addToOrder = () => {
     const obj = {
       ...menu,
       count,
     };
-    setOrder(prev => [...prev, obj]);
+    dispatch(setOrder(obj));
   };
 
   return (
@@ -24,11 +19,11 @@ const MenuItem = ({ menu, order, setOrder }) => {
       <img className="menu__img" src={`/img/${menu.name}.png`} alt={menu.name} />
       <div className="menu__inner">
         <div className="menu__count">
-          <div className="menu__increment" onClick={() => decreaseItems()}>
+          <div className="menu__increment" onClick={() => dispatch(decreaseCount())}>
             -
           </div>
           <div className="menu__counter">{count}</div>
-          <div className="menu__increment" onClick={() => increaseItems()}>
+          <div className="menu__increment" onClick={() => dispatch(increaseCount())}>
             +
           </div>
         </div>

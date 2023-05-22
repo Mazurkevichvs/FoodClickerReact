@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import './PopupForm.css';
+import { useDispatch } from 'react-redux'
+import { setIsLogged } from '../../redux/slices/loginSlice';
 
 const PopupForm = ({ closePopup }) => {
+  const dispatch = useDispatch()
   const modal = useRef();
 
   const clickOutside = (e) => {
@@ -36,7 +39,7 @@ const PopupForm = ({ closePopup }) => {
                 Nie pamiętasz hasła?
               </p>
               <div className="modal__buttons">
-                <Button name={'Zaloguj się'} />
+                <Button name={'Zaloguj się'} onClick={dispatch(setIsLogged())}/>
                 <p>lub</p>
                 <Link to={'/registration'}><Button name={'Zarejestruj się'} onClick={closePopup}/></Link>
               </div>

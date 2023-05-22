@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components';
 import './Cafe.css';
 import MenuItem from '../components/MenuItem/MenuItem';
 
 const Cafe = ({menu}) => {
-  const [order, setOrder] = useState([]);
-  const menuItem = menu.map((el, id) => <MenuItem key={id} menu={el} order={order} setOrder={setOrder}/>)
+  const menuItem = menu.map((el, id) => <MenuItem key={id} menu={el}/>)
   return (
     <>
       <main className="main">

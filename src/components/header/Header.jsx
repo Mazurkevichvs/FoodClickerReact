@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, PopupForm } from '../';
 import './Header.css';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const {isLogged} = useSelector(state => state.loginSlice)
+  console.log(isLogged)
   const [visiblePopup, setVisiblePopup] = useState(false);
   const closePopup = () => {
     setVisiblePopup(false);
