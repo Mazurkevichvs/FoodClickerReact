@@ -16,6 +16,11 @@ const PopupForm = ({ closePopup }) => {
     }
   };
 
+  const logIn = () => {
+    dispatch(setIsLogged())
+    closePopup();
+  }
+
   useEffect(() => {
     document.addEventListener('click', clickOutside);
     return () => document.removeEventListener('click', clickOutside);
@@ -39,7 +44,7 @@ const PopupForm = ({ closePopup }) => {
                 Nie pamiętasz hasła?
               </p>
               <div className="modal__buttons">
-                <Button name={'Zaloguj się'} onClick={dispatch(setIsLogged())}/>
+                <Button name={'Zaloguj się'} onClick={logIn}/>
                 <p>lub</p>
                 <Link to={'/registration'}><Button name={'Zarejestruj się'} onClick={closePopup}/></Link>
               </div>

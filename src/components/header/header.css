@@ -9,11 +9,8 @@
 
 .header__inner {
     display: flex;
-
     align-items: center;
     flex-wrap: wrap;
-
-
 }
 
 
@@ -21,9 +18,6 @@
     display: flex;
     flex-direction: column;
     margin-right: 60px;
-
-
-
 }
 
 .link__food {
@@ -34,14 +28,11 @@
     color: #a8a8a7;
     text-align: center;
     text-decoration: none;
-
 }
 
 .fb__logo {
-
     display: flex;
     align-items: center;
-
 }
 
 .inst__logo {
@@ -56,3 +47,25 @@
     margin: 30px auto;
 }
 
+.header__login {
+    display: flex;
+    margin-left: 45px;
+}
+
+.header__login img {
+    width: 70px;
+    cursor: pointer;
+}
+
+.header__login__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #e30613;
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    width: 70px;
+    cursor: pointer;
+}

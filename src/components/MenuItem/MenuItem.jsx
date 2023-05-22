@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './MenuItem.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { increaseCount, decreaseCount, setOrder } from '../../redux/slices/basketSlice';

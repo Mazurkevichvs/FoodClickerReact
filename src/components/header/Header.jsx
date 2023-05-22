@@ -5,8 +5,7 @@ import './Header.css';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const {isLogged} = useSelector(state => state.loginSlice)
-  console.log(isLogged)
+  const { isLogged } = useSelector((state) => state.loginSlice);
   const [visiblePopup, setVisiblePopup] = useState(false);
   const closePopup = () => {
     setVisiblePopup(false);
@@ -35,11 +34,19 @@ const Header = () => {
             <Link className="foodclicker" to="/">
               <img src="/img/fc_logo.png" alt="foodclicker"></img>
             </Link>
-            <Button
-              onClick={() => setVisiblePopup(true)}
-              className={'btn__login'}
-              name={'Zaloguj się!'}
-            />
+            {isLogged ? (
+              <div className='header__login'>
+                <div className='header__login__logo'>FC</div> 
+                <Link to="/basket"><img src="/img/koszyk.png" alt="basket" /></Link>  
+              </div>
+              
+            ) : (
+              <Button
+                onClick={() => setVisiblePopup(true)}
+                className={'btn__login'}
+                name={'Zaloguj się!'}
+              />
+            )}
           </div>
         </div>
       </header>
