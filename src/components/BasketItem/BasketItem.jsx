@@ -1,40 +1,42 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setItemCount } from '../../redux/slices/basketSlice'; 
 
-const BasketItem = ({ img, title, price, amount }) => {
-  const [count, setCount] = useState(1);
 
-  const plusItem = () => {
-    setCount((prev) => prev + 1);
+const BasketItem = ({ name, price, amount }) => {
+  const dispatch = useDispatch()
+  const [count, setCount] = useState(amount);
+  const increaseCount = () => {
+    setCount(count + 1);
+    dispatch(setItemCount({name, count}))
   };
-
-  const minusItem = () => {
-    if (count === 1) {
-      return;
-    }
-    setCount((prev) => prev - 1);
+  const decreaseCount = () => {
+    if (count === 0) return;
+    setCount(count - 1);
+    dispatch(setItemCount({name, count}))
   };
 
   return (
     <div className="basket__order">
       <div className="order__name">
-        <img className="order__img" src={`img/${img}.png`} alt="feta" />
+        <img className="order__img" src={`img/${name}.png`} alt={name} />
         <div className="order__info">
-          <h3 className="order__title">{title}</h3>
+          <h3 className="order__title">{name}</h3>
           <h4 className="order__subtitle">
             {amount} x {price}
           </h4>
         </div>
       </div>
       <div className="order__count">
-        <button className="count__button" onClick={minusItem}>
+        <button className="count__button" onClick={() => decreaseCount()}>
           -
         </button>
         <p className="count__quantity">{count}</p>
-        <button className="count__button" onClick={plusItem}>
+        <button className="count__button" onClick={() => increaseCount()}>
           +
         </button>
       </div>
-      <div className="order__price">16zł</div>
+      <div className="order__price">{amount*price}zł</div>
       <div>
         <img className="order__delete" src="img/trash.png" alt="delete order" />
       </div>

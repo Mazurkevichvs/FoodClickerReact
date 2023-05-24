@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components';
 import './Cafe.css';
 import MenuItem from '../components/MenuItem/MenuItem';
 
 const Cafe = ({menu}) => {
-  const menuItem = menu.map((el, id) => <MenuItem key={id} menu={el}/>)
+  const [menuItemId, setMenuItemId] = useState(1);
+  const menuItem = menu.map((el, id) => <MenuItem key={id} menu={el} menuItemId={menuItemId} setMenuItemId={setMenuItemId}/>)
   return (
     <>
       <main className="main">

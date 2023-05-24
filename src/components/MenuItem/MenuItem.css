@@ -25,6 +25,10 @@
 /* .menu__count div{
     padding: 8px 15px;    
 } */
+.menu__img {
+    width: 100%;
+    
+}
 
 .menu__counter {
     color: #000;

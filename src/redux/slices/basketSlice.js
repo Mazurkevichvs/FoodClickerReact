@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
     order: [],
-    count: 0
+    totalSum: 0
 }
 
 export const basketSlice = createSlice({
@@ -10,18 +10,27 @@ export const basketSlice = createSlice({
     initialState,
     reducers: {
       setOrder: (state, action) => {
-        state.order.push(action.payload)
+        if(state.order.length > 0) {
+          const sameName = state.order.find(el => el.name === action.payload.name
+          )
+          console.log(sameName)
+          if(sameName !== undefined) {
+            sameName.count = action.payload.count
+          } else state.order.push(action.payload)
+          
+        } else {
+          state.order.push(action.payload)
+          state.totalSum += action.payload.price* action.payload.count
+        }
       },
-      increaseCount: (state) => {
-        state.count++
+      setItemCount: (state, action) => {
+        state.order.forEach(el => {
+          if(el.name === action.payload.name) el.count = action.payload.count} )
+          state.totalSum = state.order.reduce((sum, item) => sum + item.count*item.price, 0);
       },
-      decreaseCount: (state) => {
-        if (state.count === 0) return;
-        state.count--
-      }
     },
   })
   
-  export const { setOrder, increaseCount, decreaseCount } = basketSlice.actions
+  export const { setOrder, setItemCount } = basketSlice.actions
   
   export default basketSlice.reducer
