@@ -16,9 +16,11 @@ const MenuItem = ({ menu, menuItemId, setMenuItemId }) => {
 
   const addToOrder = () => {
     const obj = {
-      ...menu,
+      name: menu.name,
+      price: menu.price,
       count,
       id: menuItemId,
+      itemSum: count*menu.price
     };
     if (obj.count !== 0) {
       setMenuItemId(menuItemId + 1);
