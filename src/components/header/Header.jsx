@@ -6,10 +6,12 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
   const { isLogged } = useSelector((state) => state.loginSlice);
+  const { order } = useSelector((state) => state.basketSlice);
   const [visiblePopup, setVisiblePopup] = useState(false);
   const closePopup = () => {
     setVisiblePopup(false);
   };
+  const totalCount = order.reduce((sum, item) => sum + item.count, 0);
   return (
     <>
       <header className="header">
@@ -35,11 +37,15 @@ const Header = () => {
               <img src="/img/fc_logo.png" alt="foodclicker"></img>
             </Link>
             {isLogged ? (
-              <div className='header__login'>
-                <div className='header__login__logo'>FC</div> 
-                <Link to="/basket"><img src="/img/koszyk.png" alt="basket" /></Link>  
+              <div className="header__login">
+                <div className="header__login__logo">FC</div>
+                <Link to="/basket">
+                  <div className='header__basket'>
+                    <img src="/img/koszyk.png" alt="basket" />
+                    <span className="badge">{totalCount}</span>
+                  </div>
+                </Link>
               </div>
-              
             ) : (
               <Button
                 onClick={() => setVisiblePopup(true)}
