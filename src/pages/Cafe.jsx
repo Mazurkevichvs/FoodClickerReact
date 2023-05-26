@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../components';
 import './Cafe.css';
 import MenuItem from '../components/MenuItem/MenuItem';
 
-const Cafe = ({menu}) => {
-  const [menuItemId, setMenuItemId] = useState(1);
-  const menuItem = menu.map((el, id) => <MenuItem key={id} menu={el} menuItemId={menuItemId} setMenuItemId={setMenuItemId}/>)
+const Cafe = ({ menu }) => {
+  const location = useLocation();
+  console.log(location)
+  const {pic, name} = location.state;
+  const menuItem = menu.map((el) => <MenuItem key={el.id} menu={el} />);
   return (
     <>
       <main className="main">
         <div className="container">
           <section className="cafe__header">
             <div className="cafe__inner">
-              <img className="cafe__logo" src="/img/laguna_logo.png" alt="laguna" />
+              {/* <img className="cafe__logo" src={`/img/${pic}`} alt={name} /> */}
               <Link to={'/basket'}>
                 <Button className={'btn__order'} name={'ZAMÓW TERAZ!'} />
               </Link>
             </div>
-            <div className="cafe__outer">
-              {menuItem}
-            </div>
+            <div className="cafe__outer">{menuItem}</div>
           </section>
         </div>
       </main>

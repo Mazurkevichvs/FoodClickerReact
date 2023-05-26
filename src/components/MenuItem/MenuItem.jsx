@@ -3,7 +3,7 @@ import './MenuItem.css';
 import { useDispatch } from 'react-redux';
 import { setOrder } from '../../redux/slices/basketSlice';
 
-const MenuItem = ({ menu, menuItemId, setMenuItemId }) => {
+const MenuItem = ({ menu }) => {
   const [count, setCount] = useState(0);
   const dispatch = useDispatch();
   const increaseCount = () => {
@@ -19,11 +19,10 @@ const MenuItem = ({ menu, menuItemId, setMenuItemId }) => {
       name: menu.name,
       price: menu.price,
       count,
-      id: menuItemId,
+      id: menu.id,
       itemSum: count*menu.price
     };
     if (obj.count !== 0) {
-      setMenuItemId(menuItemId + 1);
       dispatch(setOrder(obj));
     } else return;
   };

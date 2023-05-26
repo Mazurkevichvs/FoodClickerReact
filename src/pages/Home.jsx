@@ -19,7 +19,7 @@ function Home({ restaurants }) {
           </section>
         </div>
         <Slider />
-        <CafeList cafes={restaurants} />
+        <CafeList restaurants={restaurants} />
         <Form />
       </main>
     </>

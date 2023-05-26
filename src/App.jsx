@@ -9,15 +9,15 @@ import { Home, Basket, Cafe, Registration } from './pages';
 //Cafe logic in redux
 
 const MENU = [
-  { name: 'schab', price: 10 },
-  { name: 'pizza', price: 14 },
-  { name: 'szaszlyk', price: 11 },
-  { name: 'feta', price: 16 },
-  { name: 'omlet', price: 12 },
-  { name: 'pasta', price: 18 },
-  { name: 'szaszlyczki', price: 9 },
-  { name: 'grecka', price: 15 },
-  { name: 'salat', price: 17 },
+  { name: 'schab', price: 10, id: 1 },
+  { name: 'pizza', price: 14, id: 2 },
+  { name: 'szaszlyk', price: 11, id: 3 },
+  { name: 'feta', price: 16, id: 4 },
+  { name: 'omlet', price: 12, id: 5 },
+  { name: 'pasta', price: 18, id: 6 },
+  { name: 'szaszlyczki', price: 9, id: 7 },
+  { name: 'grecka', price: 15, id: 8 },
+  { name: 'salat', price: 17, id: 9 },
 ];
 
 const RESTAURANTS = [
@@ -25,23 +25,23 @@ const RESTAURANTS = [
     name: 'PENSJONAT LAGUNA',
     desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.',
     pic: 'laguna_logo.png',
-    key: 1,
+    id: 1,
   },
   {
     name: 'BATISTA',
     desc: 'Restauracja Batista zaprasza na pyszną: pizze, makarony, sałatki, dania tradycyjne oraz burgery. Otwarte codziennie od godz. 11:00 do 23:00.',
     pic: 'batista1.png',
-    key: 2,
+    id: 2,
   },
   {
     name: 'CAFE KREDENS',
     desc: 'Cafe Kredens - to miejsce magiczne, z bardzo przytulnym wnętrzem i miłą atmosferą. O każdej porze roku możecie Państwo do nas zaglądnąć i poczuć się, jak na wakacjach.',
     pic: 'Kredens.jpg',
-    key: 3,
+    id: 3,
   },
-  { name: 'REKLAMA', desc: 'TU MOŻE BYĆ TWOJA REKLAMA!', pic: 'fc_logo.png', key: 4 },
-  { name: 'REKLAMA', desc: 'TU MOŻE BYĆ TWOJA REKLAMA!', pic: 'fc_logo.png', key: 5 },
-  { name: 'REKLAMA', desc: 'TU MOŻE BYĆ TWOJA REKLAMA!', pic: 'fc_logo.png', key: 6 },
+  { name: 'REKLAMA', desc: 'TU MOŻE BYĆ TWOJA REKLAMA!', pic: 'fc_logo.png', id: 4 },
+  { name: 'REKLAMA', desc: 'TU MOŻE BYĆ TWOJA REKLAMA!', pic: 'fc_logo.png', id: 5 },
+  { name: 'REKLAMA', desc: 'TU MOŻE BYĆ TWOJA REKLAMA!', pic: 'fc_logo.png', id: 6 },
 ];
 
 const App = () => {
