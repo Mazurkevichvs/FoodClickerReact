@@ -49,10 +49,10 @@ const PopupForm = ({ closePopup }) => {
                 <Link to={'/registration'}><Button name={'Zarejestruj się'} onClick={closePopup}/></Link>
               </div>
               <div href="#" className="login__img">
-                <img src="img/loginfacebook.png" alt="SIgn up with Facebook" />
+                <img src="/img/loginfacebook.png" alt="SIgn up with Facebook" />
               </div>
               <div href="#" className="login__img">
-                <img src="img/googlesingup.png" alt="Sing up with Google" />
+                <img src="/img/googlesingup.png" alt="Sing up with Google" />
               </div>
             </form>
           </div>

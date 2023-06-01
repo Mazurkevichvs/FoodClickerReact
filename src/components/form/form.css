@@ -40,3 +40,14 @@
     border-radius: 10px;
 }
 
+.form__message {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 15px;
+   
+  }
+  
+ 

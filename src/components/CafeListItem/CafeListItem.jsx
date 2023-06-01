@@ -3,11 +3,10 @@ import './CafeListItem.css';
 import {Link} from 'react-router-dom'
 
 const CafeListItem = ({id ,name, desc, pic}) => {
-    const cafeData = {pic, name}
 return(
     <div className="offer__cafe">
         <div className="offer__link">
-            <Link to={{pathname:`/cafe/${id}`, state: cafeData}}><img src={`img/${pic}`} alt={name}/></Link>
+            <Link to={`/cafe/${id}`} state={{pic, name}}><img src={`img/${pic}`} alt={name}/></Link>
         </div>
         <h2 className="offer__name">{name}</h2>
         <p className="offer__description">{desc}</p>

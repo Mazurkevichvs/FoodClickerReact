@@ -6,7 +6,6 @@ import MenuItem from '../components/MenuItem/MenuItem';
 
 const Cafe = ({ menu }) => {
   const location = useLocation();
-  console.log(location)
   const {pic, name} = location.state;
   const menuItem = menu.map((el) => <MenuItem key={el.id} menu={el} />);
   return (
@@ -15,7 +14,7 @@ const Cafe = ({ menu }) => {
         <div className="container">
           <section className="cafe__header">
             <div className="cafe__inner">
-              {/* <img className="cafe__logo" src={`/img/${pic}`} alt={name} /> */}
+              <img className="cafe__logo" src={`/img/${pic}`} alt={name} />
               <Link to={'/basket'}>
                 <Button className={'btn__order'} name={'ZAMÓW TERAZ!'} />
               </Link>
