@@ -2,94 +2,112 @@
 =====================*/
 
 .header {
-    width: 100%;
-    border-bottom: 2px solid #a8a8a7;
-    top: 0;
+  width: 100%;
+  border-bottom: 2px solid #a8a8a7;
+  top: 0;
 }
 
 .header__inner {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-
 .header__links {
-    display: flex;
-    flex-direction: column;
-    margin-right: 60px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 60px;
 }
 
 .link__food {
-    margin-left: 15px;
-    font-family: 'Lato', sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    color: #a8a8a7;
-    text-align: center;
-    text-decoration: none;
+  margin-left: 15px;
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  color: #a8a8a7;
+  text-align: center;
+  text-decoration: none;
 }
 
 .fb__logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .inst__logo {
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
 }
 
 .foodclicker {
-    width: 130px;
-    height: 130px;
-    margin: 30px auto;
+  width: 130px;
+  height: 130px;
+  margin: 30px auto;
 }
 
 .header__login {
-    display: flex;
-    margin-left: 45px;
+  display: flex;
+  margin-left: 45px;
 }
 
 .header__login img {
-    width: 60px;
-    cursor: pointer;
+  width: 60px;
+  cursor: pointer;
 }
 
 .header__login__logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #e30613;
-    color: #fff;
-    font-size: 24px;
-    margin-right: 15px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #e30613;
+  color: #fff;
+  font-size: 24px;
+  margin-right: 15px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
 
 .header__basket {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media (max-width: 680px) {
+  .header__inner {
+    flex-direction: column;
+    margin-bottom: 15px;
   }
-  
-  .badge {
-    position: absolute;
-    top: 35px;
-    right: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
+
+  .header__links {
+    display: none;
   }
-  
+  .foodclicker {
+    margin: 15px auto;
+  }
+
+  .foodclicker img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

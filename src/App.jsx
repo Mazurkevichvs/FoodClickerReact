@@ -4,10 +4,6 @@ import './App.css';
 import { Footer, Header } from './components';
 import { Home, Basket, Cafe, Registration } from './pages';
 
-//Basket with components
-//Rebuild Cafe with buy buttons
-//Cafe logic in redux
-
 const MENU = [
   { name: 'schab', price: 10, id: 1 },
   { name: 'pizza', price: 14, id: 2 },

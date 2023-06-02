@@ -14,6 +14,9 @@ const Form = () => {
     setTimeout(() => {
       setIsSubmited(false);
     }, 3000)
+    setName('')
+    setEmail('')
+    setMessage('')
   };
   return (
     <div className="container">
@@ -26,12 +29,14 @@ const Form = () => {
             label={'Imię i Nazwisko'}
             id={'username'}
             name={'Name'}
+            value={name}
           />
           <Input
             onChange={(e) => setEmail(e.target.value)}
             label={'Adres E-mail'}
             id={'email'}
             name={'e-mail'}
+            value={email}
           />
           <label htmlFor="comment" className="form__label">
             Wiadomość
@@ -41,7 +46,8 @@ const Form = () => {
             className="form__comment"
             name="message"
             id="comment"
-            required></textarea>
+            required
+            value={message}></textarea>
           {isSubmited && <p className="form__message">Wiadomość została wysłana!</p>}
           <Button type={'submit'} className={'btn__send'} name={'WYŚLIJ'} />
         </form>

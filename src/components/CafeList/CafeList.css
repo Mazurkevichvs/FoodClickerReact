@@ -52,6 +52,29 @@
 .offer__description {
     text-align: left;
     line-height: 1.5;
+}
 
+@media (max-width: 950px) {
+    .offer__cafe {
+        width: 45%;
+    }
+}
 
+@media (max-width: 680px) {
+    .offer__title {
+        margin-bottom: 25px;
+    }
+    .offer__cafe {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .offer__inner {
+        justify-content: center;
+    }
+    .offer__link {
+        height: 200px;
+    }
+    .offer__name {
+        margin: 15px 0 5px 0;
+    }
 }

@@ -31,3 +31,16 @@
   .swiper-pagination-bullet-active {
     background: #fff;
   }
+
+  @media (max-width: 950px) {
+    .swiper {
+      margin-bottom: 45px;
+  }
+  }
+
+  @media (max-width: 680px) {
+    .swiper {
+      height: 230px;
+      margin-bottom: 25px;
+  }
+  }

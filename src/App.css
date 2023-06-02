@@ -1,25 +1,80 @@
 .about {
-    text-align: center;
+  text-align: center;
 }
 
 .title {
-    margin-top: 50px;
-    margin-bottom: 35px
+  margin-top: 50px;
+  margin-bottom: 35px;
 }
 
 .about__subtitle {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-bottom: 60px;
-
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 60px;
 }
-
 
 /* Container
 =====================*/
 .container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 50px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* MEDIA    950px
+  =====================*/
+
+@media (max-width: 950px) {
+  .container {
+    padding: 0 25px;
+  }
+
+  .about__title {
+    margin-top: 35px;
+    margin-bottom: 17px;
+  }
+
+  .about__subtitle {
+    margin-bottom: 35px;
+  }
+}
+
+/* MEDIA    680px
+  =====================*/
+
+@media (max-width: 680px) {
+  body {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  .bar {
+    height: 6px;
+    width: 20px;
+    margin: 6px;
+  }
+
+  .navigation {
+    bottom: 2px;
+  }
+
+  .about__subtitle {
+    font-size: 16px;
+  }
+
+  .fc__logo {
+    order: -2;
+  }
 }

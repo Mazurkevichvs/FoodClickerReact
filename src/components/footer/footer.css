@@ -30,3 +30,24 @@
     color: #ffffff;
     text-decoration: none;
 }
+
+@media (max-width: 950px) {
+    .footer__contacts {
+        font-size: 14px;
+    }
+  
+    .footer__logos {
+        margin: 15px 0;
+    } 
+}
+
+@media (max-width: 680px) {
+    .footer__inner {
+        align-items: center;
+        flex-direction: column;
+    }
+  
+    .footer__logos {
+        margin: 0;
+    }
+}

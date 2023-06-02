@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.css';
 
-const Input = ({ type, name, id, label, onChange }) => {
+const Input = ({ type, name, id, label, onChange, value }) => {
   return (
     <>
       <label className="form__label" htmlFor={id}>
@@ -11,6 +11,7 @@ const Input = ({ type, name, id, label, onChange }) => {
         onChange={onChange}
         type={type ? type : 'text'}
         name={name ? name : ''}
+        value={value}
         className="form__name"
         id={id}
         required
