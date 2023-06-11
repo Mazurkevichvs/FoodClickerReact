@@ -1,80 +1,69 @@
 .offer {
-    border-bottom: 2px solid #a8a8a7;
+  border-bottom: 2px solid #a8a8a7;
 }
 
 .offer__title {
-    margin-bottom: 45px;
+  margin-bottom: 45px;
 }
 
 .offer__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .offer__cafe {
-    max-width: 362px;
-    width: 30%;
-    margin-bottom: 30px;
-
-
+  max-width: 362px;
+  width: 30%;
+  margin-bottom: 30px;
 }
 
 .offer__link {
-    position: relative;
-    height: 241px;
-    border: 1px solid #d3d3d3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  height: 241px;
+  border: 1px solid #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .offer__link img {
-   position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    max-height: 200px;
-    max-width: 100%;
+  max-height: 200px;
+  max-width: 100%;
 }
 
 .offer__name {
-    text-transform: uppercase;
-    margin-top: 25px;
-    margin-bottom: 10px;
-
+  text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .offer__description {
-    text-align: left;
-    line-height: 1.5;
+  text-align: left;
+  line-height: 1.5;
 }
 
 @media (max-width: 950px) {
-    .offer__cafe {
-        width: 45%;
-    }
+  .offer__cafe {
+    width: 45%;
+  }
 }
 
 @media (max-width: 680px) {
-    .offer__title {
-        margin-bottom: 25px;
-    }
-    .offer__cafe {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-    .offer__inner {
-        justify-content: center;
-    }
-    .offer__link {
-        height: 200px;
-    }
-    .offer__name {
-        margin: 15px 0 5px 0;
-    }
+  .offer__title {
+    margin-bottom: 25px;
+  }
+  .offer__cafe {
+    width: 49%;
+    margin-bottom: 20px;
+  }
+  .offer__link {
+    height: 200px;
+  }
+
+  .offer__link img {
+    max-height: 190px;
+  }
+  .offer__name {
+    margin: 15px 0 5px 0;
+  }
 }

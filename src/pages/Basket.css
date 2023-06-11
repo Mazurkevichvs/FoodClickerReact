@@ -2,127 +2,184 @@
 =====================*/
 
 .basket__title {
-    font-size: 36px;
-    text-align: left;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  font-size: 36px;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.basket {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.basket__inner {
+  border: 1px solid #a8a8a7;
+  width: 69%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.basket__empty {
+  font-size: 20px;
+  margin: auto;
+}
+
+.basket__payment {
+  border: 1px solid #a8a8a7;
+  width: 30%;
+  max-height: 190px;
+}
+
+.basket__order {
+  border-top: 1px solid #a8a8a7;
+  border-bottom: 1px solid #a8a8a7;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.basket__order:last-child {
+  margin-bottom: 0;
+}
+
+.order__name {
+  display: flex;
+  margin: 15px 0;
+}
+
+.order__info {
+  margin-left: 10px;
+  color: #e20613;
+}
+.order__title {
+  display: inline-block;
+  color: #111;
+  text-transform: capitalize;
+}
+.order__subtitle {
+  display: block;
+}
+
+.order__img {
+  height: 80px;
+  width: 80px;
+}
+
+.order__count {
+  display: flex;
+  align-items: center;
+}
+
+.order__price {
+  font-size: 25px;
+  color: #111;
+  align-self: center;
+}
+
+.order__delete {
+  margin-top: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.count__button {
+  font-size: 35px;
+  background: #fff;
+  color: #a8a8a7;
+  outline: none;
+  border: none;
+  border-left: 1px solid #a8a8a7;
+  border-right: 1px solid #a8a8a7;
+  cursor: pointer;
+}
+
+.count__button:hover {
+  color: #111;
+}
+
+.count__quantity {
+  font-size: 16px;
+  margin: 0 15px;
+  display: block;
+  align-self: center;
+}
+
+.payment__title {
+  font-size: 30px;
+  text-align: left;
+  color: #a8a8a7;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.payment__price {
+  font-size: 36px;
+  color: #000;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.btn__pay {
+  margin: 20px auto 10px 10px;
+}
+
+@media (max-width: 950px) {
+  .basket__title {
+    
   }
-  
+}
+
+@media (max-width: 680px) { 
+
   .basket {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-  
-  .basket__inner {
-    border: 1px solid #a8a8a7;
-    width: 69%; 
-    display: flex;
     flex-direction: column;
   }
-
-  .basket__empty {
+  .basket__title {
     font-size: 20px;
-    margin: auto;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+  .basket__inner {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
   }
-  
-  .basket__payment {
-    border: 1px solid #a8a8a7;
-    width: 30%;
-    max-height: 190px;
-  }
-  
   .basket__order {
-    border-top: 1px solid #a8a8a7;
-    border-bottom: 1px solid #a8a8a7;
+    margin-bottom: 15px;
+  }
+
+  .order__price {
+    font-size: 20px;
+}
+  .count__button {
+    font-size: 25px;
+  }
+  .count__quantity {
+    margin: 0 10px;
+}
+  .basket__payment {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 30px;
+    align-items: center;
+    padding: 10px;
   }
 
- 
-  
-  .order__name {
-    display: flex;
-    margin: 15px 0;
-  }
-  
-  .order__info {
-    margin-left: 10px;
-    color: #e20613;
-  }
-  .order__title {
-    display: inline-block;
-    color: #111;
-    text-transform: capitalize;
-  }
-  .order__subtitle {
-    display: block;
-  }
-  
-  .order__img {
-    height: 80px;
-    width: 80px;
-  }
-  
-  .order__count {
-    display: flex;
-    align-items: center;
-   
-  }
-  
-  .order__price {
-    font-size: 25px;
-    color: #111;
-    align-self: center;
-  
-  }
-  
-  .order__delete {
-    margin-top: 15px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-  }
-  
-  .count__button {
-  
-    font-size: 35px;
-    background:#fff;
-    color: #a8a8a7;
-    outline: none;
-    border: none;
-    border-left: 1px solid #a8a8a7;
-    border-right: 1px solid #a8a8a7;
-    cursor: pointer;
-  }
-  
-  .count__button:hover {
-    color:#111;
-  }
-  
-  .count__quantity {
-    font-size: 16px;
-    margin: 0 15px;
-    display: block;
-    align-self: center;
-  }
-  
-  
   .payment__title {
-    font-size: 30px;
-    text-align: left;
-    color: #a8a8a7;
-    margin-left: 10px;
-    margin-top: 10px;
+    font-size: 20px;
+    margin: 0;
+    margin-right: 10px;
   }
   .payment__price {
-    font-size: 36px;
-    color: #000;
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 20px;
+    font-size: 25px;
+    margin: 0;
+    margin-right: auto;
   }
   .btn__pay {
-    margin: 20px auto 10px 10px;
+    margin: 0;
   }
+}

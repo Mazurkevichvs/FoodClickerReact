@@ -19,7 +19,7 @@ const MENU = [
 const RESTAURANTS = [
   {
     name: 'PENSJONAT LAGUNA',
-    desc: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.',
+    desc: 'Serwujemy dania kuchni polskiej i europejskiej. W naszej ofercie  znajdziesz tradycyjne dania, które smakują tak jak w domu, a także bardziej oryginalne propozycje inspirowane kulinariami różnych krajów.',
     pic: 'laguna_logo.png',
     id: 1,
   },

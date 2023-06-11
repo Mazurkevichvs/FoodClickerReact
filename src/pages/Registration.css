@@ -2,6 +2,6 @@
     margin-bottom: 0;
 }
 
-.form__inner .form__label:first-child {
+.form__inner.form__label:first-child {
     margin-top: 11px;
 }

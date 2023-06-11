@@ -98,9 +98,7 @@
   height: 30px;
   margin: 0;
 }
-.btn__order {
-  width: 170px;
-  margin: 25px 0 0 0;
-
+.menu__btn {
+  margin-right: 0;
 }
 }

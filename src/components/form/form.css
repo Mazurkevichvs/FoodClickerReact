@@ -4,6 +4,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  font-size: 14px;
 }
 
 .form__title {
@@ -57,7 +58,7 @@
     font-size: 14px;
   }
 
-  .form__label {
-    margin-top: 15px;
+  .form__comment {
+    height: 100px;
   }
 }

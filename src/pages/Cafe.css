@@ -67,7 +67,7 @@
 
   }
   .cafe__logo {
-      max-width: 300px;
+      max-width: 60%;
       max-height: 130px;
       order: -1;
       margin-bottom: 15px;
@@ -80,6 +80,5 @@
   .cafe__outer {
       margin: 0 auto;
       margin-bottom: 15px;
-      width: 90%;
   }
   }
