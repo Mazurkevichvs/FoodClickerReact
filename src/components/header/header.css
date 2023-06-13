@@ -51,6 +51,10 @@
   margin-left: 45px;
 }
 
+.header__login__wrapper {
+  position: relative;
+}
+
 .header__login img {
   width: 60px;
   cursor: pointer;

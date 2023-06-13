@@ -67,9 +67,7 @@
 
 .login__img {
   margin: 0 auto 10px auto;
-}
-.login__img:last-child {
-  margin-bottom: 30px;
+  cursor: pointer;
 }
 .login__img img {
   height: 50px;

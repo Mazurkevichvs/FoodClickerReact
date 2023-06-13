@@ -13,8 +13,8 @@ export const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    setIsLogged: (state) => {
-      state.isLogged = true;
+    setIsLogged: (state, action) => {
+      state.isLogged = action.payload;
     },
     setProperties: (state, action) => {
       switch (action.payload.property) {
@@ -37,9 +37,16 @@ export const loginSlice = createSlice({
           break;
       }
     },
+    resetValues: (state) => {
+      state.email = ''
+      state.password = ''
+      state.secondPassword = ''
+      state.name = ''
+      state.surname = ''
+    },
   },
 });
 
-export const { setIsLogged, setProperties } = loginSlice.actions;
+export const { setIsLogged, setProperties, resetValues } = loginSlice.actions;
 
 export default loginSlice.reducer;

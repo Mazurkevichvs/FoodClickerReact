@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, PopupForm } from '../';
+import { Button, PopupForm, LogoutPopup } from '../';
 import './Header.css';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const [isVisibleLogOut, setIsVisibleLogOut] = useState(false)
   const { isLogged } = useSelector((state) => state.loginSlice);
   const { order } = useSelector((state) => state.basketSlice);
   const [visiblePopup, setVisiblePopup] = useState(false);
@@ -38,7 +39,10 @@ const Header = () => {
             </Link>
             {isLogged ? (
               <div className="header__login">
-                <div className="header__login__logo">FC</div>
+                <div className="header__login__wrapper">
+                <div className="header__login__logo" onClick={() => setIsVisibleLogOut(!isVisibleLogOut)}>FC</div>
+                {isVisibleLogOut && <LogoutPopup setIsVisibleLogOut={setIsVisibleLogOut}/>}
+                </div>
                 <Link to="/basket">
                   <div className='header__basket'>
                     <img src="/img/koszyk.png" alt="basket" />
