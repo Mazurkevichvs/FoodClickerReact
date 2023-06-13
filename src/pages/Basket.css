@@ -125,12 +125,6 @@
   margin: 20px auto 10px 10px;
 }
 
-@media (max-width: 950px) {
-  .basket__title {
-    
-  }
-}
-
 @media (max-width: 680px) { 
 
   .basket {

@@ -5,17 +5,11 @@ import { increaseItemCount, decreaseItemCount, removeItem } from '../../redux/sl
 const BasketItem = ({ name, price, amount }) => {
   const dispatch = useDispatch();
   const {count, itemSum} = useSelector(state => state.basketSlice.order.find(obj => obj.name === name) )
-  console.log(count)
-  // const [count, setCount] = useState(amount);
+  
   const increaseCount = () => {
-    // const newCount = count + 1;
-    // setCount(newCount);
     dispatch(increaseItemCount(name));
   };
   const decreaseCount = () => {
-    // if (count === 0) return;
-    // const newCount = count - 1;
-    // setCount(newCount);
     dispatch(decreaseItemCount(name));
   };
 
