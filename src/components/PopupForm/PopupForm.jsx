@@ -62,14 +62,14 @@ const PopupForm = ({ closePopup }) => {
             </div>
           </div>
           <div className="modal__body">
-            <form className="modal__form">
+            <form className="modal__form" onSubmit={logIn}>
               <Input label={'Login lub E-Mail:'} id={'login'} name={'login'} value={email} onChange={(e) => setPropertyOnChange(e, 'email')}/>
               <Input label={'Hasło:'} id={'password'} name={'password'} value={password} onChange={(e) => setPropertyOnChange(e, 'password')} />
               <p className="modal__link" href="#">
                 Nie pamiętasz hasła?
               </p>
               <div className="modal__buttons">
-                <Button name={'Zaloguj się'} onClick={logIn} />
+                <Button name={'Zaloguj się'} type={'submit'} />
                 <p>lub</p>
                 <Link to={'/registration'}>
                   <Button name={'Zarejestruj się'} onClick={closePopup} />
