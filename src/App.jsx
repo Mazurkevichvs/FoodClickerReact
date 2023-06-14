@@ -16,6 +16,12 @@ const MENU = [
   { name: 'salat', price: 17, id: 9 },
 ];
 
+// Make menu as db
+// Make fetch menu from db
+// Make AsyncThunk Redux
+// Make menuItem counts saved
+// Make error message
+
 const App = () => {
   return (
     <>
