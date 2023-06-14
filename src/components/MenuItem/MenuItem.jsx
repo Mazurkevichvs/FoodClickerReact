@@ -1,26 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './MenuItem.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setOrder } from '../../redux/slices/basketSlice';
 
-const MenuItem = ({ menu }) => {
-  const [count, setCount] = useState(0);
+const MenuItem = ({ menuItem, cafeName }) => {
+  const { order } = useSelector((state) => state.basketSlice);
+  useEffect(() => {
+    const orderItem = order.find((el) => el.id === menuItem.id && el.cafeName === cafeName)
+    if(orderItem) setCountItem(orderItem.count)
+  }, [order])
+
+  const [countItem, setCountItem] = useState(0);
   const dispatch = useDispatch();
   const increaseCount = () => {
-    setCount(count + 1);
+    setCountItem(countItem + 1);
   };
   const decreaseCount = () => {
-    if (count === 0) return;
-    setCount(count - 1);
+    if (countItem === 0) return;
+    setCountItem(countItem - 1);
   };
 
   const addToOrder = () => {
     const obj = {
-      name: menu.name,
-      price: menu.price,
-      count,
-      id: menu.id,
-      itemSum: count*menu.price
+      cafeName,
+      menuItemName: menuItem.name,
+      price: menuItem.price,
+      count: countItem,
+      id: menuItem.id,
+      itemSum: countItem * menuItem.price,
     };
     if (obj.count !== 0) {
       dispatch(setOrder(obj));
@@ -29,13 +36,13 @@ const MenuItem = ({ menu }) => {
 
   return (
     <div className="menu__container">
-      <img className="menu__img" src={`/img/${menu.name}.png`} alt={menu.name} />
+      <img className="menu__img" src={`/img/${menuItem.name}.png`} alt={menuItem.name} />
       <div className="menu__inner">
         <div className="menu__count">
           <div className="menu__increment" onClick={() => decreaseCount()}>
             -
           </div>
-          <div className="menu__counter">{count}</div>
+          <div className="menu__counter">{countItem}</div>
           <div className="menu__increment" onClick={() => increaseCount()}>
             +
           </div>

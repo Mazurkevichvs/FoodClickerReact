@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 const Basket = () => {
   const {order, totalSum} = useSelector((state) => state.basketSlice)
-  const basketItem = order.map(el => <BasketItem key={el.id} name={el.name} price={el.price} amount={el.count} itemSum={el.itemSum}/>)
+  const basketItem = order.map(el => <BasketItem key={`${el.cafeName}_${el.id}`} {...el}/>)
   return (
     <>
       <main>

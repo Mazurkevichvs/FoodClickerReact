@@ -1,26 +1,25 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { increaseItemCount, decreaseItemCount, removeItem } from '../../redux/slices/basketSlice';
 
-const BasketItem = ({ name, price, amount }) => {
+const BasketItem = ({ menuItemName, price, count, cafeName, itemSum }) => {
   const dispatch = useDispatch();
-  const {count, itemSum} = useSelector(state => state.basketSlice.order.find(obj => obj.name === name) )
-  
   const increaseCount = () => {
-    dispatch(increaseItemCount(name));
+    dispatch(increaseItemCount(menuItemName));
   };
   const decreaseCount = () => {
-    dispatch(decreaseItemCount(name));
+    dispatch(decreaseItemCount(menuItemName));
   };
 
   return (
     <div className="basket__order">
       <div className="order__name">
-        <img className="order__img" src={`img/${name}.png`} alt={name} />
+        <img className="order__img" src={`img/${menuItemName}.png`} alt={menuItemName} />
         <div className="order__info">
-          <h3 className="order__title">{name}</h3>
+          <p>{cafeName}</p>
+          <h3 className="order__title">{menuItemName}</h3>
           <h4 className="order__subtitle">
-            {amount} x {price}
+            {count} x {price}
           </h4>
         </div>
       </div>
@@ -39,7 +38,7 @@ const BasketItem = ({ name, price, amount }) => {
           className="order__delete"
           src="img/trash.png"
           alt="delete order"
-          onClick={() => dispatch(removeItem(name))}
+          onClick={() => dispatch(removeItem(menuItemName))}
         />
       </div>
     </div>

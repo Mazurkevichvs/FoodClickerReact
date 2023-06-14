@@ -15,11 +15,10 @@ const MENU = [
   { name: 'grecka', price: 15, id: 8 },
   { name: 'salat', price: 17, id: 9 },
 ];
-
+// Save cafe name to order, useSelector by cafeName and menuName
 // Make menu as db
 // Make fetch menu from db
 // Make AsyncThunk Redux
-// Make menuItem counts saved
 // Make error message
 
 const App = () => {

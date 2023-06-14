@@ -7,7 +7,7 @@ import MenuItem from '../components/MenuItem/MenuItem';
 const Cafe = ({ menu }) => {
   const location = useLocation();
   const {pic, name} = location.state;
-  const menuItem = menu.map((el) => <MenuItem key={el.id} menu={el} />);
+  const menuItem = menu.map((el) => <MenuItem key={el.id} menuItem={el} cafeName={name}/>);
   return (
     <>
       <main className="main">

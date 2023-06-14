@@ -11,7 +11,7 @@ export const basketSlice = createSlice({
     reducers: {
       setOrder: (state, action) => {
         if(state.order.length > 0) {
-          const findItem = state.order.find(el => el.name === action.payload.name
+          const findItem = state.order.find(el => el.menuItemName === action.payload.menuItemName && el.cafeName === action.payload.cafeName
           )
           if(findItem !== undefined) {
             findItem.count = action.payload.count
@@ -27,7 +27,7 @@ export const basketSlice = createSlice({
         }
       },
       increaseItemCount: (state, action) => {
-        const findItem = state.order.find(obj => obj.name === action.payload)
+        const findItem = state.order.find(obj => obj.menuItemName === action.payload)
         if (findItem) {          
           findItem.count++
           findItem.itemSum += findItem.price
@@ -35,7 +35,7 @@ export const basketSlice = createSlice({
         }
       },
       decreaseItemCount: (state, action) => {
-        const findItem = state.order.find(obj => obj.name === action.payload)
+        const findItem = state.order.find(obj => obj.menuItemName === action.payload)
         if (findItem && findItem.count !== 1) {          
           findItem.count--
           findItem.itemSum -= findItem.price
@@ -43,7 +43,7 @@ export const basketSlice = createSlice({
         }
       },
       removeItem: (state, action) => {
-        const index = state.order.findIndex(el => el.name === action.payload)
+        const index = state.order.findIndex(el => el.menuItemName === action.payload)
         if (index !== -1) {
           state.totalSum -= state.order[index].itemSum
           state.order.splice(index, 1);
