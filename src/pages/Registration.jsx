@@ -1,25 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { Button, Input } from '../components';
 import './Registration.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { resetValues, setIsLogged, setProperties } from '../redux/slices/loginSlice';
+import { useDispatch } from 'react-redux';
+import { setUserData } from '../redux/slices/loginSlice';
 
 const Registration = () => {
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const [secondPassword, setSecondPassword] = useState()
+  const [userName, setUserName] = useState()
+  const [userSurname, setUserSurname] = useState()
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { email, password, secondPassword, name, surname } = useSelector(
-    (state) => state.loginSlice,
-  );
-  const setPropertyOnChange = (e, property) => {
-    const obj = {
-      value: e.target.value,
-      property,
-    };
-    dispatch(setProperties(obj));
-  };
+
   const validateProperties = (email, password, secondPassword) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return !emailRegex.test(email) || password.length < 6 || password !== secondPassword
@@ -33,10 +29,20 @@ const Registration = () => {
       console.log('Incorrect email or password');
       return;
     }
+    //Validate name and surname
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      dispatch(setIsLogged(true));
-      dispatch(resetValues());
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await userCredential.user.updateProfile({
+        displayName: `${userName} ${userSurname}`
+      });
+      const userFullName = `${userName} ${userSurname}`
+      const userNickname = userName.charAt(0) + userSurname.charAt(0)
+      dispatch(setUserData({userFullName, userNickname}));
+      setEmail('')
+      setPassword('')
+      setSecondPassword('')
+      setUserName('')
+      setUserSurname('')
       navigate('/');
     } catch (err) {
       console.error(err);
@@ -54,36 +60,36 @@ const Registration = () => {
                 label={'Imię:'}
                 id={'name'}
                 name={'name'}
-                value={name}
-                onChange={(e) => setPropertyOnChange(e, 'name')}
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
               />
               <Input
                 label={'Nazwisko:'}
                 id={'surname'}
                 name={'surname'}
-                value={surname}
-                onChange={(e) => setPropertyOnChange(e, 'surname')}
+                value={userSurname}
+                onChange={(e) => setUserSurname(e.target.value)}
               />
               <Input
                 label={'E-Mail:'}
                 id={'email'}
                 name={'email'}
                 value={email}
-                onChange={(e) => setPropertyOnChange(e, 'email')}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <Input
                 label={'Hasło:'}
                 id={'password'}
                 name={'password'}
                 value={password}
-                onChange={(e) => setPropertyOnChange(e, 'password')}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <Input
                 label={'Powtórz hasło:'}
                 id={'password2'}
                 name={'password2'}
                 value={secondPassword}
-                onChange={(e) => setPropertyOnChange(e, 'password2')}
+                onChange={(e) => setSecondPassword(e.target.value)}
               />
               <Button name={'Zarejestruj się'} className={'btn__send'} type={'submit'} />
             </form>
