@@ -2,7 +2,7 @@ import React from 'react';
 import './CafeListItem.css';
 import { Link } from 'react-router-dom';
 
-const CafeListItem = ({ id, name, desc, pic }) => {
+const CafeListItem = ({ id, name, description, pic }) => {
   const item = name === 'REKLAMA' ? (
     <img src={`img/${pic}`} alt={name} />
   ) : (
@@ -16,7 +16,7 @@ const CafeListItem = ({ id, name, desc, pic }) => {
         {item}
       </div>
       <h2 className="offer__name">{name}</h2>
-      <p className="offer__description">{desc}</p>
+      <p className="offer__description">{description}</p>
     </div>
   );
 };

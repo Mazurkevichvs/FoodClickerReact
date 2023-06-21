@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { auth } from '../config/firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { Button, Input } from '../components';
 import './Registration.css';
@@ -29,10 +29,10 @@ const Registration = () => {
       console.log('Incorrect email or password');
       return;
     }
-    //Validate name and surname
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      await userCredential.user.updateProfile({
+      const user = userCredential.user
+      await updateProfile(user, {
         displayName: `${userName} ${userSurname}`
       });
       const userFullName = `${userName} ${userSurname}`

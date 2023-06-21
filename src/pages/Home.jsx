@@ -7,13 +7,20 @@ import { setUserData } from '../redux/slices/loginSlice';
 function Home() {
   const dispatch = useDispatch()
   useEffect(() => {
-    console.log(auth)
-    if(auth.currentUser !== null) {
-      const userFullName = auth.currentUser.displayName
-      const userNameSplited = auth.currentUser.displayName.split(' ')
-      const userNickname = userNameSplited[0].charAt(0) + userNameSplited[1].charAt(0)
-      dispatch(setUserData({userFullName, userNickname}))
-    }
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      console.log(user)
+      if (user) {
+        const userFullName = user.displayName;
+        const userNameSplited = user.displayName?.split(' ');
+        const userNickname = userNameSplited[0].charAt(0) + userNameSplited[1].charAt(0);
+        dispatch(setUserData({ userFullName, userNickname }));
+      }
+    });
+
+    return () => {
+      // Clean up the subscription when the component unmounts
+      unsubscribe();
+    };
   },[])
   return (
     <>

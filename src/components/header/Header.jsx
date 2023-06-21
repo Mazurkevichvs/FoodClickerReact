@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
   const [isVisibleLogOut, setIsVisibleLogOut] = useState(false)
-  const { isLogged } = useSelector((state) => state.loginSlice);
+  const { isLogged, userNickname } = useSelector((state) => state.loginSlice);
   const { order } = useSelector((state) => state.basketSlice);
   const [visiblePopup, setVisiblePopup] = useState(false);
   const closePopup = () => {
@@ -40,7 +40,7 @@ const Header = () => {
             {isLogged ? (
               <div className="header__login">
                 <div className="header__login__wrapper">
-                <div className="header__login__logo" onClick={() => setIsVisibleLogOut(!isVisibleLogOut)}>FC</div>
+            <div className="header__login__logo" onClick={() => setIsVisibleLogOut(!isVisibleLogOut)}>{userNickname}</div>
                 {isVisibleLogOut && <LogoutPopup setIsVisibleLogOut={setIsVisibleLogOut}/>}
                 </div>
                 <Link to="/basket">

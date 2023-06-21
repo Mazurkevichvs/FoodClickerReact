@@ -2,24 +2,24 @@ import React, { useEffect } from 'react';
 import { CafeListItem } from '../';
 import './CafeList.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRestaurants, setRestaurants } from '../../redux/slices/restaurantsSlice';
+import { fetchCafes, setCafe } from '../../redux/slices/cafeSlice';
 
 const CafeList = () => {
   const dispatch = useDispatch()
-  const {restaurants, status} = useSelector((state) => state.restaurantsSlice)
+  const {cafes, status} = useSelector((state) => state.cafeSlice)
 
   useEffect(() => {
-    dispatch(fetchRestaurants())
+    dispatch(fetchCafes())
   }, []);
-  const restaurant = restaurants.map((el) => (
-    <CafeListItem key={el.id} name={el.name} desc={el.description} pic={el.pic} id={el.id} />
+  const cafe = cafes.map((el) => (
+    <CafeListItem key={el.id} {...el} />
   ));
 
   return (
     <section className="offer">
       <div className="container">
         <h1 className="offer__title">OFERTY PROMOCYJNE</h1>
-        <div className="offer__inner">{restaurant}</div>
+        <div className="offer__inner">{cafe}</div>
       </div>
     </section>
   );
