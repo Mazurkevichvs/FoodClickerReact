@@ -1,25 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {Slider, CafeList, Form} from '../components/';
-import { auth } from '../config/firebase';
-import { useDispatch } from 'react-redux';
-import { setUserData } from '../redux/slices/loginSlice';
+
 
 function Home() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        const userFullName = user.displayName;
-        const userNameSplited = user.displayName?.split(' ');
-        const userNickname = userNameSplited[0].charAt(0) + userNameSplited[1].charAt(0);
-        dispatch(setUserData({ userFullName, userNickname }));
-      }
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  },[])
+  
   return (
     <>
       <main className="main">

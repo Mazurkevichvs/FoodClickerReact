@@ -1,5 +1,6 @@
 # FoodClickerReact
 FoodClicker - web application with food sales and promotions in restaurants.
+Used technologies: React, Redux ToolKit, Firebase, react-router-dom
 =======
 # Getting Started with Create React App
 

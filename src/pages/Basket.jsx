@@ -2,9 +2,10 @@ import React from 'react';
 import {Button, BasketItem} from '../components/';
 import './Basket.css'
 import { useSelector } from 'react-redux';
+import { selectBasket } from '../redux/slices/basketSlice';
 
 const Basket = () => {
-  const {order, totalSum} = useSelector((state) => state.basketSlice)
+  const {order, totalSum} = useSelector(selectBasket)
   const basketItem = order.map(el => <BasketItem key={`${el.cafeName}_${el.id}`} {...el}/>)
   return (
     <>

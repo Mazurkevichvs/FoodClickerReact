@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { Button, PopupForm, LogoutPopup } from '../';
 import './Header.css';
 import { useSelector } from 'react-redux';
+import { selectBasket } from '../../redux/slices/basketSlice';
 
 const Header = () => {
   const [isVisibleLogOut, setIsVisibleLogOut] = useState(false)
   const { isLogged, userNickname } = useSelector((state) => state.loginSlice);
-  const { order } = useSelector((state) => state.basketSlice);
+  const { order } = useSelector(selectBasket);
   const [visiblePopup, setVisiblePopup] = useState(false);
   const closePopup = () => {
     setVisiblePopup(false);

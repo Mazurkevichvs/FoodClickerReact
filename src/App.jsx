@@ -1,18 +1,32 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Footer, Header } from './components';
 import { Home, Basket, Cafe, Registration } from './pages';
-import { getDocs, collection, addDoc } from 'firebase/firestore';
-import { db } from './config/firebase';
+import { auth } from './config/firebase';
+import { useDispatch } from 'react-redux';
+import { setUserData } from './redux/slices/loginSlice';
 
-// Save cafe name to order, useSelector by cafeName and menuName
-// Make menu as db
-// Make fetch menu from db
-// Make AsyncThunk Redux
 // Make error message
+// Make payment flow
+//Make User order history
 
 const App = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        const userFullName = user.displayName;
+        const userNameSplited = user.displayName?.split(' ');
+        const userNickname = userNameSplited[0].charAt(0) + userNameSplited[1].charAt(0);
+        dispatch(setUserData({ userFullName, userNickname }));
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  },[])
   return (
     <>
       <Header />

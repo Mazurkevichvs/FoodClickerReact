@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './MenuItem.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setOrder } from '../../redux/slices/basketSlice';
+import { selectBasket, setOrder } from '../../redux/slices/basketSlice';
 
 const MenuItem = ({ menuItem, cafeName }) => {
   const [countItem, setCountItem] = useState(0);
   const dispatch = useDispatch();
-  const { order } = useSelector((state) => state.basketSlice);
+  const { order } = useSelector(selectBasket);
   useEffect(() => {
     const orderItem = order.find((el) => el.id === menuItem.id && el.cafeName === cafeName)
     if(orderItem) setCountItem(orderItem.count)
