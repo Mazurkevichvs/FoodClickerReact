@@ -82,6 +82,7 @@ const Registration = () => {
                 id={'password'}
                 name={'password'}
                 value={password}
+                type={'password'}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <Input
@@ -89,6 +90,7 @@ const Registration = () => {
                 id={'password2'}
                 name={'password2'}
                 value={secondPassword}
+                type={'password'}
                 onChange={(e) => setSecondPassword(e.target.value)}
               />
               <Button name={'Zarejestruj się'} className={'btn__send'} type={'submit'} />

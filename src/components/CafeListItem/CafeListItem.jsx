@@ -2,11 +2,11 @@ import React from 'react';
 import './CafeListItem.css';
 import { Link } from 'react-router-dom';
 
-const CafeListItem = ({ id, name, description, pic }) => {
+const CafeListItem = ({ id, name, description, pic, menu }) => {
   const item = name === 'REKLAMA' ? (
     <img src={`img/${pic}`} alt={name} />
   ) : (
-    <Link to={`/cafe/${id}`} state={{ pic, name }}>
+    <Link to={`/cafe/${id}`} state={{ pic, name, menu }}>
       <img src={`img/${pic}`} alt={name} />
     </Link>
   );

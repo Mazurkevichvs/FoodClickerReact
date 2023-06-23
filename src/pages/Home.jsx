@@ -8,7 +8,6 @@ function Home() {
   const dispatch = useDispatch()
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      console.log(user)
       if (user) {
         const userFullName = user.displayName;
         const userNameSplited = user.displayName?.split(' ');
@@ -18,7 +17,6 @@ function Home() {
     });
 
     return () => {
-      // Clean up the subscription when the component unmounts
       unsubscribe();
     };
   },[])

@@ -4,9 +4,9 @@ import { Button } from '../components';
 import './Cafe.css';
 import MenuItem from '../components/MenuItem/MenuItem';
 
-const Cafe = ({ menu }) => {
+const Cafe = () => {
   const location = useLocation();
-  const {pic, name} = location.state;
+  const {pic, name, menu} = location.state;
   const menuItem = menu.map((el) => <MenuItem key={el.id} menuItem={el} cafeName={name}/>);
   return (
     <>

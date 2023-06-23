@@ -5,10 +5,10 @@ import { increaseItemCount, decreaseItemCount, removeItem } from '../../redux/sl
 const BasketItem = ({ menuItemName, price, count, cafeName, itemSum }) => {
   const dispatch = useDispatch();
   const increaseCount = () => {
-    dispatch(increaseItemCount(menuItemName));
+    dispatch(increaseItemCount({menuItemName, cafeName}));
   };
   const decreaseCount = () => {
-    dispatch(decreaseItemCount(menuItemName));
+    dispatch(decreaseItemCount({menuItemName, cafeName}));
   };
 
   return (
@@ -38,7 +38,7 @@ const BasketItem = ({ menuItemName, price, count, cafeName, itemSum }) => {
           className="order__delete"
           src="img/trash.png"
           alt="delete order"
-          onClick={() => dispatch(removeItem(menuItemName))}
+          onClick={() => dispatch(removeItem({menuItemName, cafeName}))}
         />
       </div>
     </div>

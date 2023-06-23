@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-import { getDocs, collection } from 'firebase/firestore';
+import { getDocs, collection, addDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 
 export const fetchCafes = createAsyncThunk('cafes/fetchCafes', async () => {
@@ -23,7 +23,6 @@ export const fetchCafes = createAsyncThunk('cafes/fetchCafes', async () => {
   });
 
   const cafes = await Promise.all(cafePromises);
-  console.log(cafes)
   return cafes;
 });
 
