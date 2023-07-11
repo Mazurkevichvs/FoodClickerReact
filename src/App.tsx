@@ -11,13 +11,13 @@ import { setUserData } from './redux/slices/loginSlice';
 // Make payment flow
 //Make User order history
 
-const App = () => {
+const App: React.FC = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         const userFullName = user.displayName;
-        const userNameSplited = user.displayName?.split(' ');
+        const userNameSplited = userFullName?.split(' ');
         const userNickname = userNameSplited[0].charAt(0) + userNameSplited[1].charAt(0);
         dispatch(setUserData({ userFullName, userNickname }));
       }
@@ -26,7 +26,7 @@ const App = () => {
     return () => {
       unsubscribe();
     };
-  },[])
+  },[auth, dispatch])
   return (
     <>
       <Header />
