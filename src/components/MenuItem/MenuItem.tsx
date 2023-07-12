@@ -3,14 +3,34 @@ import './MenuItem.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectBasket, setOrder } from '../../redux/slices/basketSlice';
 
-const MenuItem = ({ menuItem, cafeName }) => {
-  const [countItem, setCountItem] = useState(0);
+interface MenuItem {
+  id: string,
+  name: string,
+  price: number
+}
+
+interface MenuItemProps {
+  menuItem: MenuItem;
+  cafeName: string;
+}
+
+interface OrderObject {
+    cafeName: string;
+    menuItemName: string;
+    price: number;
+    count: number;
+    id: string;
+    itemSum: number;
+}
+
+const MenuItem: React.FC<MenuItemProps> = ({ menuItem, cafeName }) => {
+  const [countItem, setCountItem] = useState<number>(0);
   const dispatch = useDispatch();
   const { order } = useSelector(selectBasket);
   useEffect(() => {
-    const orderItem = order.find((el) => el.id === menuItem.id && el.cafeName === cafeName)
-    if(orderItem) setCountItem(orderItem.count)
-  }, [order])
+    const orderItem: OrderObject = order.find((el:OrderObject) => el.id === menuItem.id && el.cafeName === cafeName);
+    if (orderItem) setCountItem(orderItem.count);
+  }, [order]);
 
   const increaseCount = () => {
     setCountItem(countItem + 1);
@@ -21,7 +41,7 @@ const MenuItem = ({ menuItem, cafeName }) => {
   };
 
   const addToOrder = () => {
-    const obj = {
+    const obj:OrderObject = {
       cafeName,
       menuItemName: menuItem.name,
       price: menuItem.price,
@@ -31,7 +51,7 @@ const MenuItem = ({ menuItem, cafeName }) => {
     };
     if (obj.count !== 0) {
       dispatch(setOrder(obj));
-    } else return;
+    } 
   };
 
   return (

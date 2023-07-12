@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Button, Input } from '../';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
+import { Button, Input } from '..';
 import './Form.css';
 
-const Form = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [isSubmited, setIsSubmited] = useState(false);
+const Form: React.FC = () => {
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [isSubmited, setIsSubmited] = useState<boolean>(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmited(true);
     setTimeout(() => {
@@ -25,24 +25,26 @@ const Form = () => {
         <p className="form__subtitle">(formularz dla kontrahenta)</p>
         <form onSubmit={handleSubmit} action="#" method="post" className="form__inner">
           <Input
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
             label={'Imię i Nazwisko'}
             id={'username'}
             name={'Name'}
             value={name}
+            type={'text'}
           />
           <Input
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             label={'Adres E-mail'}
             id={'email'}
             name={'e-mail'}
             value={email}
+            type={'text'}
           />
           <label htmlFor="comment" className="form__label">
             Wiadomość
           </label>
           <textarea
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
             className="form__comment"
             name="message"
             id="comment"

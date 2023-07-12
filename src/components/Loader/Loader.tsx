@@ -1,7 +1,7 @@
 import React from "react"
 import ContentLoader from "react-content-loader"
 
-const MyLoader = () => (
+const MyLoader: React.FC = () => (
   <ContentLoader 
   className="offer__cafe"
     speed={2}

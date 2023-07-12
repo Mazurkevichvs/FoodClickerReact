@@ -2,7 +2,21 @@ import React from 'react';
 import './CafeListItem.css';
 import { Link } from 'react-router-dom';
 
-const CafeListItem = ({ id, name, description, pic, menu }) => {
+interface MenuItem {
+  id: string,
+  name: string,
+  price: number
+}
+
+interface CafeListItemProps {
+  id: string,
+  name: string,
+  description?: string,
+  pic: string,
+  menu: MenuItem[]
+}
+
+const CafeListItem:React.FC<CafeListItemProps> = ({ id, name, description, pic, menu }) => {
   const item = name === 'REKLAMA' ? (
     <img src={`img/${pic}`} alt={name} />
   ) : (

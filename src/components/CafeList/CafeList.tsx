@@ -5,36 +5,32 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCafes } from '../../redux/slices/cafeSlice';
 
 interface MenuItem {
-  id: number,
+  id: string,
   name: string,
   price: number
 }
 
 interface Cafe {
-  id:number,
+  id:string,
   description: string,
   name: string,
   pic: string,
-  menu: {
-    items?:MenuItem[] | null;
-  }
+  menu: MenuItem[]
 }
 
-interface InitialState {
+interface RootState {
   cafeSlice: {
     cafes: Cafe[],
     status: string
   }
 }
 
-
-
 const CafeList:React.FC = () => {
   const dispatch = useDispatch();
-  const { cafes, status } = useSelector((state:InitialState) => state.cafeSlice);
+  const { cafes, status } = useSelector((state:RootState) => state.cafeSlice);
 
   useEffect(() => {
-    dispatch(fetchCafes());
+    dispatch(fetchCafes() as any);
   }, []);
   const cafe = cafes.map((el) => <CafeListItem key={el.id} {...el} />);
 

@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import './Input.css';
 
-const Input = ({ type, name, id, label, onChange, value }) => {
+interface InputProps {
+  type: string,
+  name: string,
+  id: string,
+  label: string,
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
+  value: string
+}
+
+const Input: React.FC<InputProps> = ({ type, name, id, label, onChange, value }) => {
   return (
     <>
       <label className="form__label" htmlFor={id}>

@@ -11,7 +11,7 @@ interface BasketItemProps {
   itemSum:number,
 }
 
-const BasketItem:React.FC<BasketItemProps> = ({ menuItemName, price, count, cafeName, itemSum }:BasketItemProps) => {
+const BasketItem:React.FC<BasketItemProps> = ({ menuItemName, price, count, cafeName, itemSum }) => {
   const dispatch = useDispatch();
   const increaseCount = () => {
     dispatch(increaseItemCount({menuItemName, cafeName}));
