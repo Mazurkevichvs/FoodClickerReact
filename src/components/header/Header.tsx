@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, PopupForm, LogoutPopup } from '../';
+import { Button, PopupForm, LogoutPopup } from '..';
 import './Header.css';
 import { useSelector } from 'react-redux';
 import { selectBasket } from '../../redux/slices/basketSlice';
 
-const Header = () => {
-  const [isVisibleLogOut, setIsVisibleLogOut] = useState(false)
-  const { isLogged, userNickname } = useSelector((state) => state.loginSlice);
+interface InitialState {
+  loginSlice: {
+    isLogged: boolean,
+    userNickname: string
+  }
+}
+
+interface OrderItem {
+  count: number
+}
+
+const Header: React.FC = () => {
+  const [isVisibleLogOut, setIsVisibleLogOut] = useState<boolean>(false)
+  const { isLogged, userNickname } = useSelector((state: InitialState) => state.loginSlice);
   const { order } = useSelector(selectBasket);
-  const [visiblePopup, setVisiblePopup] = useState(false);
+  const [visiblePopup, setVisiblePopup] = useState<boolean>(false);
   const closePopup = () => {
     setVisiblePopup(false);
   };
-  const totalCount = order.reduce((sum, item) => sum + item.count, 0);
+  const totalCount: number = order.reduce((sum:number, item:OrderItem) => sum + item.count, 0);
   return (
     <>
       <header className="header">
@@ -56,6 +67,7 @@ const Header = () => {
                 onClick={() => setVisiblePopup(true)}
                 className={'btn__login'}
                 name={'Zaloguj się!'}
+                type={'button'}
               />
             )}
           </div>

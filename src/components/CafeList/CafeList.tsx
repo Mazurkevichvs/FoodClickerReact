@@ -1,12 +1,37 @@
 import React, { useEffect } from 'react';
-import { CafeListItem, Loader } from '../';
+import { CafeListItem, Loader } from '..';
 import './CafeList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCafes } from '../../redux/slices/cafeSlice';
 
-const CafeList = () => {
+interface MenuItem {
+  id: number,
+  name: string,
+  price: number
+}
+
+interface Cafe {
+  id:number,
+  description: string,
+  name: string,
+  pic: string,
+  menu: {
+    items?:MenuItem[] | null;
+  }
+}
+
+interface InitialState {
+  cafeSlice: {
+    cafes: Cafe[],
+    status: string
+  }
+}
+
+
+
+const CafeList:React.FC = () => {
   const dispatch = useDispatch();
-  const { cafes, status } = useSelector((state) => state.cafeSlice);
+  const { cafes, status } = useSelector((state:InitialState) => state.cafeSlice);
 
   useEffect(() => {
     dispatch(fetchCafes());

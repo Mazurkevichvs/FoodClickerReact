@@ -2,7 +2,16 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { increaseItemCount, decreaseItemCount, removeItem } from '../../redux/slices/basketSlice';
 
-const BasketItem = ({ menuItemName, price, count, cafeName, itemSum }) => {
+
+interface BasketItemProps {
+  menuItemName: string;
+  price: number,
+  count: number,
+  cafeName:string,
+  itemSum:number,
+}
+
+const BasketItem:React.FC<BasketItemProps> = ({ menuItemName, price, count, cafeName, itemSum }:BasketItemProps) => {
   const dispatch = useDispatch();
   const increaseCount = () => {
     dispatch(increaseItemCount({menuItemName, cafeName}));

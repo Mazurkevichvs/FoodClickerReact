@@ -15,10 +15,10 @@ const App: React.FC = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        const userFullName = user.displayName;
-        const userNameSplited = userFullName?.split(' ');
-        const userNickname = userNameSplited[0].charAt(0) + userNameSplited[1].charAt(0);
+      if (user && user.displayName) {
+        const userFullName:string = user.displayName;
+        const userNameSplited: string[] = userFullName?.split(' ');
+        const userNickname: string = userNameSplited[0].charAt(0) + userNameSplited[1].charAt(0);
         dispatch(setUserData({ userFullName, userNickname }));
       }
     });
