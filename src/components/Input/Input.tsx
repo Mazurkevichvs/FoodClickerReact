@@ -2,8 +2,8 @@ import React, {ChangeEvent} from 'react';
 import './Input.css';
 
 interface InputProps {
-  type: string,
-  name: string,
+  type?: string,
+  name?: string,
   id: string,
   label: string,
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void,

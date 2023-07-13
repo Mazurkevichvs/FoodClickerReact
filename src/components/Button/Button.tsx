@@ -2,7 +2,7 @@ import React from 'react'
 import './Button.css'
 
 interface ButtonProps {
-  className: string,
+  className?: string,
   name: string,
   onClick?: ()=>void,
   type: "button" | "submit" | "reset"

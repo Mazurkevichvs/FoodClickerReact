@@ -7,8 +7,8 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 
 SwiperCore.use([Navigation, Pagination]);
 
-const Slider = () => {
-    const slides = [];
+const Slider:React.FC = () => {
+    const slides: JSX.Element[] = [];
     for(let i = 1; i < 5; i++) {
         slides.push(
             <SwiperSlide className="swiper-slide"
@@ -21,7 +21,6 @@ const Slider = () => {
     return(  
         <section className="swiper">
             <Swiper className="swiper-wrapper" 
-            modules={[Navigation, Pagination]}
             slidesPerView={1}
             navigation
             pagination = {{clickable: true}}
@@ -30,12 +29,9 @@ const Slider = () => {
             autoplay
             >               
                 {slides}                                           
-            </Swiper>
-            
+            </Swiper>   
         </section>
     )
 }
-
-
 
 export default Slider;

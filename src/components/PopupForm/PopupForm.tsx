@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, FormEvent} from 'react';
 import { auth, googleProvider } from '../../config/firebase';
 import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
 import { Link } from 'react-router-dom';
@@ -8,30 +8,33 @@ import './PopupForm.css';
 import { useDispatch } from 'react-redux';
 import { setIsLogged } from '../../redux/slices/loginSlice';
 
-const PopupForm = ({ closePopup }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+interface PopupFormProps {
+  closePopup: () => void
+}
+
+const PopupForm: React.FC<PopupFormProps> = ({ closePopup }) => {
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
   const dispatch = useDispatch();
-  const modal = useRef();
+  const modal = useRef<HTMLDivElement>(null);
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
-  const clickOutside = (e) => {
-    if (modal.current && !modal.current.contains(e.target)) {
+  const clickOutside = (e:MouseEvent) => {
+    if (modal.current && !modal.current.contains(e.target as Node)) {
       closePopup();
     }
   };
 
-  const logIn = async (e) => {
+  const logIn = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password )
-      console.log(userCredential)
+      await signInWithEmailAndPassword(auth, email, password )
       dispatch(setIsLogged(true));
       closePopup();   
     } catch (err) {
@@ -58,14 +61,14 @@ const PopupForm = ({ closePopup }) => {
             <form className="modal__form" onSubmit={logIn}>
               <Input label={'Login lub E-Mail:'} id={'login'} name={'login'} value={email} onChange={(e) => setEmail(e.target.value)}/>
               <Input label={'Hasło:'} type={'password'} id={'password'} name={'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
-              <p className="modal__link" href="#">
+              <p className="modal__link">
                 Nie pamiętasz hasła?
               </p>
               <div className="modal__buttons">
                 <Button name={'Zaloguj się'} type={'submit'} />
                 <p>lub</p>
                 <Link to={'/registration'}>
-                  <Button name={'Zarejestruj się'} onClick={closePopup} />
+                  <Button name={'Zarejestruj się'} onClick={closePopup} type={'button'}/>
                 </Link>
               </div>
               <div className="login__img" onClick={signInWithGoogle}>

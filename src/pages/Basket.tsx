@@ -1,10 +1,10 @@
 import React from 'react';
-import {Button, BasketItem} from '../components/';
+import {Button, BasketItem} from '../components';
 import './Basket.css'
 import { useSelector } from 'react-redux';
 import { selectBasket } from '../redux/slices/basketSlice';
 
-const Basket = () => {
+const Basket: React.FC = () => {
   const {order, totalSum} = useSelector(selectBasket)
   const basketItem = order.map(el => <BasketItem key={`${el.cafeName}_${el.id}`} {...el}/>)
   return (
@@ -19,7 +19,7 @@ const Basket = () => {
             <div className="basket__payment">
               <h2 className="payment__title">Do zapłaty:</h2>
               <p className="payment__price">{totalSum}zł</p>
-              <Button className={"btn__pay"} name={'Przejdź do płatności'}/>
+              <Button type={'button'} className={"btn__pay"} name={'Przejdź do płatności'}/>
             </div>
           </section>
         </div>
