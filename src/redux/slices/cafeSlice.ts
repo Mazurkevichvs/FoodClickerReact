@@ -2,6 +2,8 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import { getDocs, collection, addDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 
+interface 
+
 export const fetchCafes = createAsyncThunk('cafes/fetchCafes', async () => {
   const cafesCollectionRef = collection(db, 'restaurants');
   const cafesData = await getDocs(cafesCollectionRef);
