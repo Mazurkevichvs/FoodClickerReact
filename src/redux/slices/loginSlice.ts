@@ -1,4 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+
+interface UserDataObject {
+  userFullName: string,
+  userNickname: string
+}
 
 interface LoginSliceState {
   userFullName: string,
@@ -16,12 +21,12 @@ export const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    setUserData: (state, action) => {
+    setUserData: (state, action:PayloadAction<UserDataObject>) => {
       state.userFullName = action.payload.userFullName
       state.userNickname = action.payload.userNickname
       state.isLogged = true;
     },
-    setIsLogged: (state, action) => {
+    setIsLogged: (state, action: PayloadAction<boolean>) => {
       state.isLogged = action.payload;
     }
   },

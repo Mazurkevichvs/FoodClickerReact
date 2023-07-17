@@ -1,19 +1,14 @@
 import React from 'react';
 import './CafeListItem.css';
 import { Link } from 'react-router-dom';
-
-interface MenuItem {
-  id: string,
-  name: string,
-  price: number
-}
+import { MenuItemType } from '../../@types/types';
 
 interface CafeListItemProps {
   id: string,
   name: string,
   description?: string,
   pic: string,
-  menu: MenuItem[]
+  menu: MenuItemType[]
 }
 
 const CafeListItem:React.FC<CafeListItemProps> = ({ id, name, description, pic, menu }) => {

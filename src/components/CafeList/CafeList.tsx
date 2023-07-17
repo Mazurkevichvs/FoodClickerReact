@@ -3,24 +3,11 @@ import { CafeListItem, Loader } from '..';
 import './CafeList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCafes } from '../../redux/slices/cafeSlice';
-
-interface MenuItem {
-  id: string,
-  name: string,
-  price: number
-}
-
-interface Cafe {
-  id:string,
-  description: string,
-  name: string,
-  pic: string,
-  menu: MenuItem[]
-}
+import { CafeItem } from '../../@types/types';
 
 interface RootState {
   cafeSlice: {
-    cafes: Cafe[],
+    cafes: CafeItem[],
     status: string
   }
 }

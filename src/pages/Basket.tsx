@@ -3,10 +3,11 @@ import {Button, BasketItem} from '../components';
 import './Basket.css'
 import { useSelector } from 'react-redux';
 import { selectBasket } from '../redux/slices/basketSlice';
+import { OrderItem } from '../@types/types';
 
 const Basket: React.FC = () => {
   const {order, totalSum} = useSelector(selectBasket)
-  const basketItem = order.map(el => <BasketItem key={`${el.cafeName}_${el.id}`} {...el}/>)
+  const basketItem = order.map((el: OrderItem) => <BasketItem key={`${el.cafeName}_${el.id}`} {...el}/>)
   return (
     <>
       <main>

@@ -1,8 +1,8 @@
 import React from 'react';
-import {Slider, CafeList, Form} from '../components/';
+import {Slider, CafeList, Form} from '../components';
 
 
-function Home() {
+const Home:React.FC = () => {
   
   return (
     <>

@@ -1,6 +1,18 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {PayloadAction, createSlice} from '@reduxjs/toolkit';
+import { RootState } from '../store';
+import { OrderItem } from '../../@types/types';
 
-const initialState = {
+interface PayloadObject {
+  menuItemName: string,
+  cafeName: string
+}
+
+interface BasketSliceState {
+  order: OrderItem[],
+  totalSum: number
+}
+
+const initialState:BasketSliceState = {
     order: [],
     totalSum: 0
 }
@@ -9,7 +21,7 @@ export const basketSlice = createSlice({
     name: 'basket',
     initialState,
     reducers: {
-      setOrder: (state, action) => {
+      setOrder: (state, action:PayloadAction<OrderItem>) => {
         if(state.order.length > 0) {
           const findItem = state.order.find(el => el.menuItemName === action.payload.menuItemName && el.cafeName === action.payload.cafeName
           )
@@ -26,7 +38,7 @@ export const basketSlice = createSlice({
           state.totalSum += action.payload.itemSum
         }
       },
-      increaseItemCount: (state, action) => {
+      increaseItemCount: (state, action:PayloadAction<PayloadObject>) => {
         const findItem = state.order.find(el => el.menuItemName === action.payload.menuItemName && el.cafeName === action.payload.cafeName)
         if (findItem) {          
           findItem.count++
@@ -34,7 +46,7 @@ export const basketSlice = createSlice({
           state.totalSum += findItem.price
         }
       },
-      decreaseItemCount: (state, action) => {
+      decreaseItemCount: (state, action:PayloadAction<PayloadObject>) => {
         const findItem = state.order.find(el => el.menuItemName === action.payload.menuItemName && el.cafeName === action.payload.cafeName)
         if (findItem && findItem.count !== 1) {          
           findItem.count--
@@ -42,7 +54,7 @@ export const basketSlice = createSlice({
           state.totalSum -= findItem.price
         }
       },
-      removeItem: (state, action) => {
+      removeItem: (state, action:PayloadAction<PayloadObject>) => {
         const index = state.order.findIndex(el => el.menuItemName === action.payload.menuItemName && el.cafeName === action.payload.cafeName)
         if (index !== -1) {
           state.totalSum -= state.order[index].itemSum
@@ -52,7 +64,7 @@ export const basketSlice = createSlice({
     },
   })
   
-  export const selectBasket = (state) => state.basketSlice
+  export const selectBasket = (state:RootState) => state.basketSlice
 
   export const { setOrder, increaseItemCount, decreaseItemCount, removeItem } = basketSlice.actions
   

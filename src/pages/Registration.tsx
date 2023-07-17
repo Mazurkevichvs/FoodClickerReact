@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -7,23 +7,23 @@ import './Registration.css';
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../redux/slices/loginSlice';
 
-const Registration = () => {
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
-  const [secondPassword, setSecondPassword] = useState()
-  const [userName, setUserName] = useState()
-  const [userSurname, setUserSurname] = useState()
+const Registration:React.FC = () => {
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [secondPassword, setSecondPassword] = useState<string>('')
+  const [userName, setUserName] = useState<string>('')
+  const [userSurname, setUserSurname] = useState<string>('')
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const validateProperties = (email, password, secondPassword) => {
+  const validateProperties = (email:string, password:string, secondPassword:string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return !emailRegex.test(email) || password.length < 6 || password !== secondPassword
       ? false
       : true;
   };
 
-  const signUp = async (e) => {
+  const signUp = async (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateProperties(email, password, secondPassword)) {
       console.log('Incorrect email or password');
@@ -61,21 +61,21 @@ const Registration = () => {
                 id={'name'}
                 name={'name'}
                 value={userName}
-                onChange={(e) => setUserName(e.target.value)}
+                onChange={(e:ChangeEvent<HTMLInputElement>) => setUserName(e.target.value)}
               />
               <Input
                 label={'Nazwisko:'}
                 id={'surname'}
                 name={'surname'}
                 value={userSurname}
-                onChange={(e) => setUserSurname(e.target.value)}
+                onChange={(e:ChangeEvent<HTMLInputElement>) => setUserSurname(e.target.value)}
               />
               <Input
                 label={'E-Mail:'}
                 id={'email'}
                 name={'email'}
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               />
               <Input
                 label={'Hasło:'}
@@ -83,7 +83,7 @@ const Registration = () => {
                 name={'password'}
                 value={password}
                 type={'password'}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               />
               <Input
                 label={'Powtórz hasło:'}
@@ -91,7 +91,7 @@ const Registration = () => {
                 name={'password2'}
                 value={secondPassword}
                 type={'password'}
-                onChange={(e) => setSecondPassword(e.target.value)}
+                onChange={(e:ChangeEvent<HTMLInputElement>) => setSecondPassword(e.target.value)}
               />
               <Button name={'Zarejestruj się'} className={'btn__send'} type={'submit'} />
             </form>

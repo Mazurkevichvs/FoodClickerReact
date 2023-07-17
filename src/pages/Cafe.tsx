@@ -3,11 +3,18 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../components';
 import './Cafe.css';
 import MenuItem from '../components/MenuItem/MenuItem';
+import { MenuItemType } from '../@types/types';
 
-const Cafe = () => {
+interface LocationState {
+  pic:string,
+  name:string,
+  menu: MenuItemType[]
+}
+
+const Cafe: React.FC = () => {
   const location = useLocation();
-  const {pic, name, menu} = location.state;
-  const menuItem = menu.map((el) => <MenuItem key={el.id} menuItem={el} cafeName={name}/>);
+  const {pic, name, menu}  = location.state as LocationState;
+  const menuItem = menu.map((el:MenuItemType) => <MenuItem key={el.id} menuItem={el} cafeName={name}/>);
   return (
     <>
       <main className="main">
@@ -16,7 +23,7 @@ const Cafe = () => {
             <div className="cafe__inner">
               <img className="cafe__logo" src={`/img/${pic}`} alt={name} />
               <Link to={'/basket'}>
-                <Button className={'btn__order'} name={'ZAMÓW TERAZ!'} />
+                <Button type='button' className={'btn__order'} name={'ZAMÓW TERAZ!'} />
               </Link>
             </div>
             <div className="cafe__outer">{menuItem}</div>
