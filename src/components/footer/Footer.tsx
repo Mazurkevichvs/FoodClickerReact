@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer__inner">
           <div className="footer__logos">
-            <img src="/img/msg_footer.png" alt="email" />
+            <img src="img/msg_footer.png" alt="email" />
             <p className="footer__contacts">info@foodclicker.pl</p>
           </div>
           <div className="footer__logos">
