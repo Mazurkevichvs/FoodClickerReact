@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, PopupForm, LogoutPopup } from '..';
-import './feader.css';
+import './header.css';
 import { useSelector } from 'react-redux';
 import { selectBasket } from '../../redux/slices/basketSlice';
 
