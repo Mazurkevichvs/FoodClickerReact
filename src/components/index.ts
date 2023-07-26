@@ -1,11 +1,11 @@
 export {default as Button} from './Button/Button';
 export {default as CafeList} from './CafeList/CafeList';
 export {default as CafeListItem} from './CafeListItem/CafeListItem';
-export {default as Footer} from './Footer/Footer';
-export {default as Form} from './Form/Form';
-export {default as Header} from './Header/Header';
+export {default as Footer} from './footer/Footer';
+export {default as Form} from './form/Form';
+export {default as Header} from './header/Header';
 export {default as PopupForm} from './PopupForm/PopupForm';
-export {default as Slider} from './Slider/Slider';
+export {default as Slider} from './slider/Slider';
 export {default as Input} from './Input/Input';
 export {default as BasketItem} from './BasketItem/BasketItem';
 export {default as LogoutPopup} from './Popup/LogoutPopup';
