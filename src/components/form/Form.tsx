@@ -1,6 +1,6 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { Button, Input } from '..';
-import './Form.css';
+import './form.css';
 
 const Form: React.FC = () => {
   const [name, setName] = useState<string>('');

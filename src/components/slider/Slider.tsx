@@ -3,7 +3,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination'
-import './Slider.css';
+import './slider.css';
 
 const Slider:React.FC = () => {
     const slides: JSX.Element[] = [];
