@@ -3,14 +3,14 @@ import './Footer.css';
 import { Link } from "react-router-dom";
 
 
-const Footer = () => {
+const Footer:React.FC = () => {
     return(
 <footer className="footer">
         <div className="container">
             <div className="footer__inner">
                 <div className="footer__logos">
                     <img src="/img/msg_footer.png" alt="email"/>
-                    <p className="footer__contacts">info@foodklicker.pl</p>
+                    <p className="footer__contacts">info@foodclicker.pl</p>
                 </div>
                 <div className="footer__logos">
                     <img src="/img/tel_footer.png" alt="tel"/>

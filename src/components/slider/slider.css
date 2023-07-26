@@ -23,9 +23,10 @@
     color: #fff;    
   }
   
-  .swiper-pagination-bullet {    
-    width: 15px;
-    height: 15px;
+  .swiper-pagination-bullet { 
+    background-color: #fff !important;   
+    width: 15px !important; 
+    height: 15px !important;
   }
   
   .swiper-pagination-bullet-active {

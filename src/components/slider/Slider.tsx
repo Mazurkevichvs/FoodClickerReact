@@ -1,11 +1,9 @@
 import React from "react";
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/swiper.min.css'
-import './Slider.css';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
-
-SwiperCore.use([Navigation, Pagination]);
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination'
+import './Slider.css';
 
 const Slider:React.FC = () => {
     const slides: JSX.Element[] = [];
@@ -22,6 +20,7 @@ const Slider:React.FC = () => {
         <section className="swiper">
             <Swiper className="swiper-wrapper" 
             slidesPerView={1}
+            modules={[Navigation, Pagination]}
             navigation
             pagination = {{clickable: true}}
             speed={600}
