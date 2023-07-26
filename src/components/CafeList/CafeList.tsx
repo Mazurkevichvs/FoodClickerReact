@@ -30,7 +30,7 @@ const CafeList:React.FC = () => {
         ) : (
           <div className="offer__inner">
             {status === 'loading'
-              ? [...new Array(4)].map((el, index) => <Loader key={index} />)
+              ? [...new Array(4)].map((_el, index) => <Loader key={index} />)
               : cafe}
           </div>
         )}
