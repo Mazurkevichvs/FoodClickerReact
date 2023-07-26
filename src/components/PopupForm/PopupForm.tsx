@@ -72,7 +72,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ closePopup }) => {
                 </Link>
               </div>
               <div className="login__img" onClick={signInWithGoogle}>
-                <img src="/img/googlesingup.png" alt="Sing up with Google" />
+                <img src="img/googlesingup.png" alt="Sing up with Google" />
               </div>
             </form>
           </div>
