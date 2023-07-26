@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Footer, Header } from './components';
-import { Home, Basket, Cafe, Registration } from './Pages';
+import { Home, Basket, Cafe, Registration } from './pages';
 import { auth } from './config/firebase';
 import { useDispatch } from 'react-redux';
 import { setUserData } from './redux/slices/loginSlice';
