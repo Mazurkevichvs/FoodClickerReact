@@ -6,6 +6,7 @@ import { Button, Input } from '../components';
 import './Registration.css';
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../redux/slices/loginSlice';
+import Alert from '../components/Alert/Alert';
 
 const Registration:React.FC = () => {
   const [email, setEmail] = useState<string>('')
@@ -13,6 +14,7 @@ const Registration:React.FC = () => {
   const [secondPassword, setSecondPassword] = useState<string>('')
   const [userName, setUserName] = useState<string>('')
   const [userSurname, setUserSurname] = useState<string>('')
+  const [error, setError] = useState<boolean>(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ const Registration:React.FC = () => {
   const signUp = async (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateProperties(email, password, secondPassword)) {
-      console.log('Incorrect email or password');
+      setError(true)
       return;
     }
     try {
@@ -43,9 +45,10 @@ const Registration:React.FC = () => {
       setSecondPassword('')
       setUserName('')
       setUserSurname('')
+      setError(false)
       navigate('/');
     } catch (err) {
-      console.error(err);
+      setError(true)
     }
   };
 
@@ -93,6 +96,7 @@ const Registration:React.FC = () => {
                 type={'password'}
                 onChange={(e:ChangeEvent<HTMLInputElement>) => setSecondPassword(e.target.value)}
               />
+              {error && <Alert alertMessage='Nieprawidłowy login lub hasło'/>}
               <Button name={'Zarejestruj się'} className={'btn__send'} type={'submit'} />
             </form>
           </section>

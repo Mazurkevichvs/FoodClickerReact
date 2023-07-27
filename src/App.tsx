@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Footer, Header } from './components';
-import { Home, Basket, Cafe, Registration } from './pages';
+import { Home, Basket, Cafe, Registration, NotFound } from './pages';
 import { auth } from './config/firebase';
 import { useDispatch } from 'react-redux';
 import { setUserData } from './redux/slices/loginSlice';
@@ -35,6 +35,7 @@ const App: React.FC = () => {
         <Route path="/cafe/:id" element={<Cafe/>} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

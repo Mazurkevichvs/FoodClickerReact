@@ -7,6 +7,7 @@ import Input from '../Input/Input';
 import './PopupForm.css';
 import { useDispatch } from 'react-redux';
 import { setIsLogged } from '../../redux/slices/loginSlice';
+import Alert from '../Alert/Alert';
 
 interface PopupFormProps {
   closePopup: () => void
@@ -15,6 +16,7 @@ interface PopupFormProps {
 const PopupForm: React.FC<PopupFormProps> = ({ closePopup }) => {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+  const [error, setError] = useState<boolean>(false)
   const dispatch = useDispatch();
   const modal = useRef<HTMLDivElement>(null);
   const signInWithGoogle = async () => {
@@ -25,28 +27,28 @@ const PopupForm: React.FC<PopupFormProps> = ({ closePopup }) => {
     }
   };
 
-  // const clickOutside = (e:MouseEvent) => {
-  //   if (modal.current && !modal.current.contains(e.target as Node)) {
-  //     closePopup();
-  //     console.log(modal.current)
-  //   }
-  // };
+  const clickOutside = (e:MouseEvent) => {
+    if (modal.current && !modal.current.contains(e.target as Node)) {
+      closePopup();
+    }
+  };
 
   const logIn = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
       await signInWithEmailAndPassword(auth, email, password )
       dispatch(setIsLogged(true));
+      setError(false)
       closePopup();   
     } catch (err) {
-      console.error(err)
+      setError(true)
     }
   };
 
-  // useEffect(() => {
-  //   document.addEventListener('click', clickOutside);
-  //   return () => document.removeEventListener('click', clickOutside);
-  // }, [modal]);
+  useEffect(() => {
+    document.addEventListener('mousedown', clickOutside);
+    return () => document.removeEventListener('mousedown', clickOutside);
+  }, []);
 
   return (
     <section className="modal">
@@ -62,6 +64,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ closePopup }) => {
             <form className="modal__form" onSubmit={logIn}>
               <Input label={'Login lub E-Mail:'} id={'login'} name={'login'} value={email} onChange={(e) => setEmail(e.target.value)}/>
               <Input label={'Hasło:'} type={'password'} id={'password'} name={'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
+              {error && <Alert alertMessage='Nieprawidłowy login lub hasło'/>}
               <p className="modal__link">
                 Nie pamiętasz hasła?
               </p>

@@ -31,7 +31,6 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="header">
-      <div onClick={() => setVisiblePopup(true)}>{visiblePopup.toString()}</div>
         <div className="container">
           <div className="header__inner">
             <div className="header__links">
@@ -78,7 +77,6 @@ const Header: React.FC = () => {
         </div>
       </header>
       {visiblePopup && <PopupForm closePopup={closePopup} />}
-      
     </>
   );
 };

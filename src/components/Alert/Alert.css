@@ -1,0 +1,20 @@
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e30613;
+    border: 1px solid #e30613;
+    border-radius: 10px;
+    margin-top: 20px;
+    
+}
+
+.alert__icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.alert__message {
+    font-size: 16px;
+}
