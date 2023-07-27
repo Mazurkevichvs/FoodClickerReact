@@ -25,11 +25,12 @@ const PopupForm: React.FC<PopupFormProps> = ({ closePopup }) => {
     }
   };
 
-  const clickOutside = (e:MouseEvent) => {
-    if (modal.current && !modal.current.contains(e.target as Node)) {
-      closePopup();
-    }
-  };
+  // const clickOutside = (e:MouseEvent) => {
+  //   if (modal.current && !modal.current.contains(e.target as Node)) {
+  //     closePopup();
+  //     console.log(modal.current)
+  //   }
+  // };
 
   const logIn = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -42,10 +43,10 @@ const PopupForm: React.FC<PopupFormProps> = ({ closePopup }) => {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener('click', clickOutside);
-    return () => document.removeEventListener('click', clickOutside);
-  }, [modal]);
+  // useEffect(() => {
+  //   document.addEventListener('click', clickOutside);
+  //   return () => document.removeEventListener('click', clickOutside);
+  // }, [modal]);
 
   return (
     <section className="modal">
@@ -72,7 +73,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ closePopup }) => {
                 </Link>
               </div>
               <div className="login__img" onClick={signInWithGoogle}>
-                <img src="img/googlesingup.png" alt="Sing up with Google" />
+                <img src="/img/googlesingup.png" alt="Sing up with Google" />
               </div>
             </form>
           </div>

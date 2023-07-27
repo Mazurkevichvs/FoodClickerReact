@@ -2,8 +2,7 @@ import React from 'react';
 import {Slider, CafeList, Form} from '../components';
 
 
-const Home:React.FC = () => {
-  
+const Home:React.FC = () => { 
   return (
     <>
       <main className="main">

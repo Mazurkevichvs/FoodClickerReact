@@ -24,15 +24,19 @@ const Header: React.FC = () => {
   const closePopup = () => {
     setVisiblePopup(false);
   };
+  const openPopup = () => {
+    setVisiblePopup(true)
+  }
   const totalCount: number = order.reduce((sum:number, item:OrderItem) => sum + item.count, 0);
   return (
     <>
       <header className="header">
+      <div onClick={() => setVisiblePopup(true)}>{visiblePopup.toString()}</div>
         <div className="container">
           <div className="header__inner">
             <div className="header__links">
               <div className="fb__logo">
-                <img src="img/fb_logo.png" alt="facebook"></img>
+                <img src="/img/fb_logo.png" alt="facebook"></img>
                 <a
                   className="link__food"
                   href="https://www.facebook.com/Foodclicker-101761928231395">
@@ -40,14 +44,14 @@ const Header: React.FC = () => {
                 </a>
               </div>
               <div className="inst__logo">
-                <img src="img/inst_logo.png" alt="instagram"></img>
+                <img src="/img/inst_logo.png" alt="instagram"></img>
                 <a className="link__food" href="">
                   FoodClicker
                 </a>
               </div>
             </div>
             <Link className="foodclicker" to="/">
-              <img src="img/fc_logo.png" alt="foodclicker"></img>
+              <img src="/img/fc_logo.png" alt="foodclicker"></img>
             </Link>
             {isLogged ? (
               <div className="header__login">
@@ -57,14 +61,14 @@ const Header: React.FC = () => {
                 </div>
                 <Link to="/basket">
                   <div className='header__basket'>
-                    <img src="img/koszyk.png" alt="basket" />
+                    <img src="/img/koszyk.png" alt="basket" />
                     <span className="badge">{totalCount}</span>
                   </div>
                 </Link>
               </div>
             ) : (
               <Button
-                onClick={() => setVisiblePopup(true)}
+                onClick={openPopup}
                 className={'btn__login'}
                 name={'Zaloguj się!'}
                 type={'button'}
@@ -74,6 +78,7 @@ const Header: React.FC = () => {
         </div>
       </header>
       {visiblePopup && <PopupForm closePopup={closePopup} />}
+      
     </>
   );
 };
