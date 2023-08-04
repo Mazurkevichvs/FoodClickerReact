@@ -8,7 +8,7 @@ interface AlertProps {
 const Alert:React.FC<AlertProps> = ({alertMessage}) => {
   return (
     <div className='alert'>
-      <img className='alert__icon' src="/img/alert-icon.png" alt="alert" />
+      <img className='alert__icon' src="./img/alert-icon.png" alt="alert" />
       <h3 className='alert__message'>{alertMessage}</h3>
     </div>
   )

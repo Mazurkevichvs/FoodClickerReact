@@ -23,7 +23,7 @@ const BasketItem:React.FC<BasketItemProps> = ({ menuItemName, price, count, cafe
   return (
     <div className="basket__order">
       <div className="order__name">
-        <img className="order__img" src={`/img/${menuItemName}.png`} alt={menuItemName} />
+        <img className="order__img" src={`./img/${menuItemName}.png`} alt={menuItemName} />
         <div className="order__info">
           <p>{cafeName}</p>
           <h3 className="order__title">{menuItemName}</h3>
@@ -45,7 +45,7 @@ const BasketItem:React.FC<BasketItemProps> = ({ menuItemName, price, count, cafe
       <div>
         <img
           className="order__delete"
-          src="/img/trash.png"
+          src="./img/trash.png"
           alt="delete order"
           onClick={() => dispatch(removeItem({menuItemName, cafeName}))}
         />

@@ -9,12 +9,14 @@ interface LoginSliceState {
   userFullName: string,
   userNickname: string,
   isLogged: boolean,
+  isVisiblePopup: boolean
 }
 
 const initialState: LoginSliceState = {
   userFullName: '',
   userNickname: '',
   isLogged: false,
+  isVisiblePopup : false,
 };
 
 export const loginSlice = createSlice({
@@ -28,10 +30,13 @@ export const loginSlice = createSlice({
     },
     setIsLogged: (state, action: PayloadAction<boolean>) => {
       state.isLogged = action.payload;
+    },
+    setVisiblePopup: (state) => {
+      state.isVisiblePopup = !state.isVisiblePopup
     }
   },
 });
 
-export const { setIsLogged, setUserData } = loginSlice.actions;
+export const { setIsLogged, setUserData, setVisiblePopup } = loginSlice.actions;
 
 export default loginSlice.reducer;

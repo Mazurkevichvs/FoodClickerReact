@@ -7,9 +7,8 @@ import { auth } from './config/firebase';
 import { useDispatch } from 'react-redux';
 import { setUserData } from './redux/slices/loginSlice';
 
-// Make error message
 // Make payment flow
-//Make User order history
+// Make User order history
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
@@ -31,10 +30,10 @@ const App: React.FC = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/cafe/:id" element={<Cafe/>} />
-        <Route path="/basket" element={<Basket />} />
-        <Route path="/registration" element={<Registration />} />
+        <Route path="FoodClickerReact/" element={<Home/>} />
+        <Route path="FoodClickerReact/cafe/:id" element={<Cafe/>} />
+        <Route path="FoodClickerReact/basket" element={<Basket />} />
+        <Route path="FoodClickerReact/registration" element={<Registration />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
