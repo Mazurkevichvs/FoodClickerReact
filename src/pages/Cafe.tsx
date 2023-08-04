@@ -32,7 +32,7 @@ const Cafe: React.FC = () => {
         <div className="container">
           <section className="cafe__header">
             <div className="cafe__inner">
-              <img className="cafe__logo" src={`./img/${pic}`} alt={name} />
+              <img className="cafe__logo" src={`../img/${pic}`} alt={name} />
               {isLogged ? <Link to={'/FoodClickerReact/basket'}>
                 <Button type='button' className={'btn__order'} name={'ZAMÓW TERAZ!'} />
               </Link> : <Button type='button' className={'btn__order'} name={'ZAMÓW TERAZ!'} onClick={() => dispatch(setVisiblePopup())}/>

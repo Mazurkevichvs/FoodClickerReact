@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, FormEvent} from 'react';
 import { auth, googleProvider } from '../../config/firebase';
 import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import './PopupForm.css';
@@ -15,6 +15,7 @@ const PopupForm: React.FC = () => {
   const [error, setError] = useState<boolean>(false)
   const dispatch = useDispatch();
   const modal = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   const togglePopup = () => {
     dispatch(setVisiblePopup())
@@ -76,7 +77,7 @@ const PopupForm: React.FC = () => {
                 </Link>
               </div>
               <div className="login__img" onClick={signInWithGoogle}>
-                <img src="./img/googlesingup.png" alt="Sing up with Google" />
+                <img src={location.pathname.includes('cafe') ? "../img/googlesingup.png" :"./img/googlesingup.png"} alt="Sing up with Google" />
               </div>
             </form>
           </div>
