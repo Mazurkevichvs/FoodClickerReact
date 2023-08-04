@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { Button, Input } from '..';
 import './form.css';
+import Alert from '../Alert/Alert';
 
 const Form: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -50,7 +51,7 @@ const Form: React.FC = () => {
             id="comment"
             required
             value={message}></textarea>
-          {isSubmited && <p className="form__message">Wiadomość została wysłana!</p>}
+          {isSubmited && <Alert alertMessage='Wiadomość została wysłana!' status={true}/>}
           <Button type={'submit'} className={'btn__send'} name={'WYŚLIJ'} />
         </form>
       </section>
