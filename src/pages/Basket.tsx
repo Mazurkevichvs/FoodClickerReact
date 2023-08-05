@@ -4,6 +4,7 @@ import './Basket.css'
 import { useSelector } from 'react-redux';
 import { selectBasket } from '../redux/slices/basketSlice';
 import { OrderItem } from '../@types/types';
+import { Link } from 'react-router-dom';
 
 const Basket: React.FC = () => {
   const {order, totalSum} = useSelector(selectBasket)
@@ -20,7 +21,7 @@ const Basket: React.FC = () => {
             <div className="basket__payment">
               <h2 className="payment__title">Do zapłaty:</h2>
               <p className="payment__price">{totalSum}zł</p>
-              <Button type={'button'} className={"btn__pay"} name={'Przejdź do płatności'}/>
+              {order.length > 0 ? <Link to={'/FoodClickerReact/podsumowanie'}><Button type={'button'} className={"btn__pay"} name={'Przejdź do płatności'}/></Link> : <Button type={'button'} className={"btn__pay btn__disabled"} name={'Przejdź do płatności'} disabled={true}/>}
             </div>
           </section>
         </div>

@@ -65,14 +65,14 @@ const PopupForm: React.FC = () => {
             <form className="modal__form" onSubmit={logIn}>
               <Input label={'Login lub E-Mail:'} id={'login'} name={'login'} value={email} onChange={(e) => setEmail(e.target.value)}/>
               <Input label={'Hasło:'} type={'password'} id={'password'} name={'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
-              {error && <Alert alertMessage='Nieprawidłowy login lub hasło'/>}
+              {error && <Alert alertMessage='Nieprawidłowy login lub hasło' status={false}/>}
               <p className="modal__link">
                 Nie pamiętasz hasła?
               </p>
               <div className="modal__buttons">
                 <Button name={'Zaloguj się'} type={'submit'} />
                 <p>lub</p>
-                <Link to={'/registration'}>
+                <Link to={'FoodClickerReact/registration'}>
                   <Button name={'Zarejestruj się'} onClick={togglePopup} type={'button'}/>
                 </Link>
               </div>

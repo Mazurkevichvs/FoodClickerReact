@@ -2,7 +2,7 @@
 =====================*/
 
 .basket__title {
-  font-size: 36px;
+  font-size: 24px;
   text-align: left;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -73,7 +73,7 @@
 }
 
 .order__price {
-  font-size: 25px;
+  font-size: 24px;
   color: #111;
   align-self: center;
 }
@@ -86,7 +86,7 @@
 }
 
 .count__button {
-  font-size: 35px;
+  font-size: 30px;
   background: #fff;
   color: #a8a8a7;
   outline: none;
@@ -108,7 +108,7 @@
 }
 
 .payment__title {
-  font-size: 30px;
+  font-size: 24px;
   text-align: left;
   color: #a8a8a7;
   margin-left: 10px;
@@ -150,7 +150,7 @@
     font-size: 20px;
 }
   .count__button {
-    font-size: 25px;
+    font-size: 24px;
   }
   .count__quantity {
     margin: 0 10px;
@@ -169,7 +169,7 @@
     margin-right: 10px;
   }
   .payment__price {
-    font-size: 25px;
+    font-size: 24px;
     margin: 0;
     margin-right: auto;
   }

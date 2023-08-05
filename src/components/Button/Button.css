@@ -43,6 +43,12 @@
 .btn:hover {
   background-color: #ff0011;
 }
+.btn__disabled {
+  background-color: #e2858b;
+}
+.btn__disabled:hover {
+  background-color: #e2858b;
+}
 .btn__login {
   margin-left: 60px;
 }
