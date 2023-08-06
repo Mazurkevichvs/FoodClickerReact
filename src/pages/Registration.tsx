@@ -96,7 +96,7 @@ const Registration:React.FC = () => {
                 type={'password'}
                 onChange={(e:ChangeEvent<HTMLInputElement>) => setSecondPassword(e.target.value)}
               />
-              {error && <Alert alertMessage='Nieprawidłowy login lub hasło'/>}
+              {error && <Alert alertMessage='Nieprawidłowy login lub hasło' status={false}/>}
               <Button name={'Zarejestruj się'} className={'btn__send'} type={'submit'} />
             </form>
           </section>
