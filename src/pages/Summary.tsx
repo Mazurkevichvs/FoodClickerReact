@@ -80,7 +80,7 @@ const Summary: React.FC = () => {
                 <label htmlFor="comment" className="form__label">
                   Notatki dla dostawcy:
                 </label>
-                <textarea className="form__comment" name="message" id="comment" value="" placeholder='np. piętro, kod do klatki' onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}></textarea>
+                <textarea className="form__comment" name="message" id="comment" value={message} placeholder='np. piętro, kod do klatki' onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}></textarea>
               </div>
               <h1 className="basket__title">Metoda płatności:</h1>
               <div className="basket__inner summary__inner summary__payment__method">
