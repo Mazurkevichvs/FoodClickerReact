@@ -4,8 +4,8 @@
 .basket__title {
   font-size: 24px;
   text-align: left;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .basket {
@@ -19,7 +19,7 @@
   width: 69%;
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 20px;
 }
 
 .basket__empty {
@@ -126,15 +126,12 @@
 }
 
 @media (max-width: 680px) { 
-
   .basket {
     flex-direction: column;
   }
   .basket__title {
     font-size: 20px;
     text-align: left;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
   .basket__inner {

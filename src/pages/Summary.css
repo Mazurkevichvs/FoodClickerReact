@@ -1,5 +1,5 @@
 .summary__inner__container {
-    width: 65%;
+    width: 60%;
 }
 
 .summary__inner {
@@ -17,8 +17,15 @@
     margin-bottom: 15px;
 }
 
+.summary__inner label {
+    margin-top: 5px;
+}
+.summary__inner label:first-child {
+    margin-top: 0;
+}
+
 .summary__payment {
-    width: 34%;
+    width: 35%;
     border: 1px solid #a8a8a7;
     padding: 10px;
     position: sticky;
@@ -108,4 +115,26 @@
     display: block;
     margin: 0 auto;
     margin-top: 15px;
+}
+
+.summary__form__inside {
+    display: flex;
+    justify-content: space-between;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 45%;
+  }
+
+.summary__payment__method {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.summary__payment__method > .payment__method:nth-last-of-type(-n+2) {
+    margin-bottom: 0px;
 }

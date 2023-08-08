@@ -1,8 +1,16 @@
-import React from 'react';
-import { Button } from '../components';
+import React, { useState, ChangeEvent } from 'react';
+import { Button, Input, PaymentMethod } from '../components';
 import './Summary.css';
 
 const Summary: React.FC = () => {
+  const [name, setName] = useState<string>('')
+  const [surname, setSurname] = useState<string>('')
+  const [street, setStreet] = useState<string>('')
+  const [houseNumber, setHouseNumber] = useState<string>('')
+  const [apartmentNumber, setApartmentNumber] = useState<string>('')
+  const [phoneNumber, setPhoneNumber] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
   return (
     <>
       <main>
@@ -50,42 +58,36 @@ const Summary: React.FC = () => {
               </div>
               <h1 className="basket__title">Dane do dostawy:</h1>
               <div className="basket__inner summary__inner">
-                <h2>PENSJONAT LAGUNA</h2>
-                <div className="summary__inner__wrapper">
-                  <div className="summary__inner__item">
-                    <input type="radio" name="takeaway" id="takeaway" />
-                    <div className="summary__inner__item__right">
-                      <div className="inner__item__title method__title">
-                        <label>Odbiór osobisty:</label>
-                        <p>0zł</p>
-                      </div>
-                      <div className="inner__item__title method__subtitle">
-                        <p>Przybliżony czas odbioru:</p>
-                        <p>15:00</p>
-                      </div>
-                      <div>
-                        <p>72-600 Świnoujście</p>
-                        <p>ul. Bolesława Chrobrego 37</p>
-                      </div>
-                      <div>
-                        <p>godz otwarcia: 8:00 -21:00</p>
-                      </div>
-                    </div>
+                <Input label={'Imię*:'} name="name" id="name" value={name} onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}/>
+                <Input label={'Nazwisko:'} name="surname" id="surname" value={surname} onChange={(e: ChangeEvent<HTMLInputElement>) => setSurname(e.target.value)}/>
+                <Input label={'Ulica*:'} name="street" id="street" value={street} onChange={(e: ChangeEvent<HTMLInputElement>) => setStreet(e.target.value)}/>
+                <div className="summary__form__inside">
+                  <div className="input-group">
+                    <Input label={'Nr domu*:'} name="houseNumber" id="houseNumber" value={houseNumber} onChange={(e: ChangeEvent<HTMLInputElement>) => setHouseNumber(e.target.value)}/>
                   </div>
-                  <div className="summary__inner__item">
-                    <input type="radio" name="takeaway" id="takeaway" />
-                    <div className="summary__inner__item__right">
-                      <div className="inner__item__title method__title">
-                        <label>Dostawa:</label>
-                        <p>10zł</p>
-                      </div>
-                      <div className="inner__item__title method__subtitle">
-                        <p>Przybliżony czas dostawy:</p>
-                        <p>15:30</p>
-                      </div>
-                    </div>
+                  <div className="input-group">
+                    <Input
+                      label={'Nr mieszkania*:'}
+                      name="apartmentNumber"
+                      id="apartmentNumber"
+                      value={apartmentNumber}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => setApartmentNumber(e.target.value)}
+                    />
                   </div>
                 </div>
+                <Input label={'Telefon:'} name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={(e: ChangeEvent<HTMLInputElement>) => setPhoneNumber(e.target.value)}/>
+                <Input label={'Email:'} name="email" id="email" value={email} onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} />
+                <label htmlFor="comment" className="form__label">
+                  Notatki dla dostawcy:
+                </label>
+                <textarea className="form__comment" name="message" id="comment" value="" placeholder='np. piętro, kod do klatki' onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}></textarea>
+              </div>
+              <h1 className="basket__title">Metoda płatności:</h1>
+              <div className="basket__inner summary__inner summary__payment__method">
+               <PaymentMethod name='Karta płatnicza' img='mastercard'/>
+               <PaymentMethod name='Google pay' img='applepay'/>
+               <PaymentMethod name='BLIK' img='blik'/>
+               <PaymentMethod name='Gotówką na miejscu' img='cash'/>
               </div>
             </div>
             <div className="summary__payment">
