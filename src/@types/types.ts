@@ -10,6 +10,9 @@ export interface CafeItem {
   pic: string;
   description: string;
   menu: MenuItemType[];
+  postcode: string;
+  adress: string;
+  openhours:string;
 }
 
 export interface OrderItem {

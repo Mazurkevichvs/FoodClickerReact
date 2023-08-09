@@ -10,6 +10,7 @@ import { setUserData } from './redux/slices/loginSlice';
 
 // Make payment flow
 // Make User order history
+// status of order and admin complete
 
 const App: React.FC = () => {
   const dispatch = useDispatch()

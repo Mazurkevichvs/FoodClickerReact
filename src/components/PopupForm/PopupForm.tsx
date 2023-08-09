@@ -63,8 +63,8 @@ const PopupForm: React.FC = () => {
           </div>
           <div className="modal__body">
             <form className="modal__form" onSubmit={logIn}>
-              <Input label={'Login lub E-Mail:'} id={'login'} name={'login'} value={email} onChange={(e) => setEmail(e.target.value)}/>
-              <Input label={'Hasło:'} type={'password'} id={'password'} name={'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
+              <Input label={'Login lub E-Mail:'} id={'login'} name={'login'} value={email} required={true} onChange={(e) => setEmail(e.target.value)}/>
+              <Input label={'Hasło:'} type={'password'} id={'password'} name={'password'} value={password} required={true} onChange={(e) => setPassword(e.target.value)} />
               {error && <Alert alertMessage='Nieprawidłowy login lub hasło' status={false}/>}
               <p className="modal__link">
                 Nie pamiętasz hasła?

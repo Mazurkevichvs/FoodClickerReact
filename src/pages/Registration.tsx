@@ -64,6 +64,7 @@ const Registration:React.FC = () => {
                 id={'name'}
                 name={'name'}
                 value={userName}
+                required={true}
                 onChange={(e:ChangeEvent<HTMLInputElement>) => setUserName(e.target.value)}
               />
               <Input
@@ -71,6 +72,7 @@ const Registration:React.FC = () => {
                 id={'surname'}
                 name={'surname'}
                 value={userSurname}
+                required={true}
                 onChange={(e:ChangeEvent<HTMLInputElement>) => setUserSurname(e.target.value)}
               />
               <Input
@@ -78,6 +80,7 @@ const Registration:React.FC = () => {
                 id={'email'}
                 name={'email'}
                 value={email}
+                required={true}
                 onChange={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               />
               <Input
@@ -86,6 +89,7 @@ const Registration:React.FC = () => {
                 name={'password'}
                 value={password}
                 type={'password'}
+                required={true}
                 onChange={(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               />
               <Input
@@ -94,6 +98,7 @@ const Registration:React.FC = () => {
                 name={'password2'}
                 value={secondPassword}
                 type={'password'}
+                required={true}
                 onChange={(e:ChangeEvent<HTMLInputElement>) => setSecondPassword(e.target.value)}
               />
               {error && <Alert alertMessage='Nieprawidłowy login lub hasło' status={false}/>}

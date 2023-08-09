@@ -7,10 +7,11 @@ interface InputProps {
   id: string,
   label: string,
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
-  value: string
+  value: string,
+  required: boolean
 }
 
-const Input: React.FC<InputProps> = ({ type, name, id, label, onChange, value }) => {
+const Input: React.FC<InputProps> = ({ type, name, id, label, onChange, value, required }) => {
   return (
     <>
       <label className="form__label" htmlFor={id}>
@@ -23,7 +24,7 @@ const Input: React.FC<InputProps> = ({ type, name, id, label, onChange, value })
         value={value}
         className="form__name"
         id={id}
-        required
+        required={required}
       />
     </>
   );

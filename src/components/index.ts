@@ -11,3 +11,4 @@ export {default as BasketItem} from './BasketItem/BasketItem';
 export {default as LogoutPopup} from './Popup/LogoutPopup';
 export {default as Loader} from './Loader/Loader';
 export {default as PaymentMethod} from './PaymentMethod/PaymentMethod';
+export {default as DeliveryMethod} from './DeliveryMethod/DeliveryMethod';

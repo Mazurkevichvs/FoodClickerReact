@@ -32,6 +32,7 @@ const Form: React.FC = () => {
             name={'Name'}
             value={name}
             type={'text'}
+            required={true}
           />
           <Input
             onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
@@ -40,6 +41,7 @@ const Form: React.FC = () => {
             name={'e-mail'}
             value={email}
             type={'text'}
+            required={true}
           />
           <label htmlFor="comment" className="form__label">
             Wiadomość
