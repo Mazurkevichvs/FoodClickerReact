@@ -1,4 +1,5 @@
 import React from 'react';
+import './SummaryItem.css'
 
 interface SummaryItemProps {
   menuItemName: string;
