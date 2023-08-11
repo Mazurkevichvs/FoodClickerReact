@@ -5,6 +5,7 @@
     width: 49%;
     padding: 5px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .payment__method:hover {
@@ -26,4 +27,8 @@
 .payment__method h4 {
     color: #000;
     font-size: 16px;
+}
+
+.active__payment {
+    border-color: #e30613;
 }

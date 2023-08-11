@@ -23,3 +23,11 @@ export interface OrderItem {
   id: string;
   itemSum: number;
 }
+
+export interface BasketItemProps {
+  menuItemName: string;
+  price: number,
+  count: number,
+  cafeName:string,
+  itemSum:number,
+}

@@ -12,3 +12,5 @@ export {default as LogoutPopup} from './Popup/LogoutPopup';
 export {default as Loader} from './Loader/Loader';
 export {default as PaymentMethod} from './PaymentMethod/PaymentMethod';
 export {default as DeliveryMethod} from './DeliveryMethod/DeliveryMethod';
+export {default as SummaryListItem} from './SummaryListItem/SummaryListItem';
+export {default as SummaryItem} from './SummaryItem/SummaryItem';

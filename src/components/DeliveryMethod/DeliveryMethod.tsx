@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ChangeEvent } from 'react';
+import React, { useEffect, useState, ChangeEvent, Dispatch, SetStateAction } from 'react';
 import './DeliveryMethod.css';
 
 interface DeliveryMethodProps {
@@ -6,6 +6,8 @@ interface DeliveryMethodProps {
   adress: string;
   openhours: string;
   postcode: string;
+  setDeliveryOption: Dispatch<SetStateAction<string>>;
+  deliveryOption: string;
 }
 
 interface TimeVariations {
@@ -18,9 +20,11 @@ const DeliveryMethod: React.FC<DeliveryMethodProps> = ({
   adress,
   openhours,
   postcode,
+  deliveryOption,
+  setDeliveryOption
 }) => {
   const [deliveryTime, setDeliveryTime] = useState<TimeVariations | null>(null);
-  const [deliveryOption, setDeliveryOption] = useState<string>('takeaway');
+  
   const getTimeVariations = (): TimeVariations => {
     const currentTime: Date = new Date();
     const roundedMinutes: number = Math.ceil(currentTime.getMinutes() / 5) * 5;
