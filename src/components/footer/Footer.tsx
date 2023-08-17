@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="footer__logos fc__logo">
-            <Link to={'FoodClickerReact/'}>
+            <Link to={'/'}>
               <img src="./img/fc_footer.png" alt="foodclicker" />
             </Link>
             <p className="footer__contacts">FoodClicker©2020</p>

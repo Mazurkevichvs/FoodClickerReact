@@ -67,7 +67,7 @@ const Summary: React.FC = () => {
         setStreet('');
         setApartmentNumber('');
         setHouseNumber('');
-        navigate('/FoodClickerReact/')
+        navigate('/')
       }, 1000);
     } else {
       setError(true);

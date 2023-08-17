@@ -51,7 +51,7 @@ const Header: React.FC = () => {
                 </a>
               </div>
             </div>
-            <Link className="foodclicker" to="FoodClickerReact/">
+            <Link className="foodclicker" to="/">
               <img src="./img/fc_logo.png" alt="foodclicker"></img>
             </Link>
             {isLogged ? (
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
                   </div>
                   {isVisibleLogOut && <LogoutPopup setIsVisibleLogOut={setIsVisibleLogOut} />}
                 </div>
-                <Link to="FoodClickerReact/basket">
+                <Link to="/basket">
                   <div className="header__basket">
                     <img src="./img/koszyk.png" alt="basket" />
                     <span className="badge">{totalCount}</span>

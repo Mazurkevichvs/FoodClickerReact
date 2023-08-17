@@ -72,7 +72,7 @@ const PopupForm: React.FC = () => {
               <div className="modal__buttons">
                 <Button name={'Zaloguj się'} type={'submit'} />
                 <p>lub</p>
-                <Link to={'FoodClickerReact/registration'}>
+                <Link to={'/registration'}>
                   <Button name={'Zarejestruj się'} onClick={togglePopup} type={'button'}/>
                 </Link>
               </div>

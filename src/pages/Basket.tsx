@@ -21,7 +21,7 @@ const Basket: React.FC = () => {
             <div className="basket__payment">
               <h2 className="payment__title">Do zapłaty:</h2>
               <p className="payment__price">{totalSum}zł</p>
-              {order.length > 0 ? <Link to={'/FoodClickerReact/podsumowanie'}><Button type={'button'} className={"btn__pay"} name={'Przejdź do płatności'}/></Link> : <Button type={'button'} className={"btn__pay btn__disabled"} name={'Przejdź do płatności'} disabled={true}/>}
+              {order.length > 0 ? <Link to={'/podsumowanie'}><Button type={'button'} className={"btn__pay"} name={'Przejdź do płatności'}/></Link> : <Button type={'button'} className={"btn__pay btn__disabled"} name={'Przejdź do płatności'} disabled={true}/>}
             </div>
           </section>
         </div>

@@ -46,7 +46,7 @@ const Registration:React.FC = () => {
       setUserName('')
       setUserSurname('')
       setError(false)
-      navigate('FoodClickerReact/');
+      navigate('/');
     } catch (err) {
       setError(true)
     }

@@ -19,7 +19,7 @@ const LogoutPopup: React.FC<LogoutPopupProps> = ({ setIsVisibleLogOut }) => {
       await signOut(auth);
       dispatch(setIsLogged(false));
       setIsVisibleLogOut(false);
-      navigate('FoodClickerReact/');
+      navigate('/');
     } catch (err) {
       console.error(err);
     }

@@ -33,11 +33,11 @@ const App: React.FC = () => {
     <>
       <Header />
       <Routes>
-        <Route path="FoodClickerReact/" element={<Home/>} />
-        <Route path="FoodClickerReact/cafe/:id" element={<Cafe/>} />
-        <Route path="FoodClickerReact/basket" element={<Basket />} />
-        <Route path="FoodClickerReact/registration" element={<Registration />} />
-        <Route path="FoodClickerReact/podsumowanie" element={<Summary />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/cafe/:id" element={<Cafe/>} />
+        <Route path="/basket" element={<Basket />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/podsumowanie" element={<Summary />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

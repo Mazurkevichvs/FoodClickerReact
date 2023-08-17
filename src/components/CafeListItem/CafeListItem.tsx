@@ -15,7 +15,7 @@ const CafeListItem:React.FC<CafeListItemProps> = ({ id, name, description, pic, 
   const item = name === 'REKLAMA' ? (
     <img src={`./img/${pic}`} alt={name} />
   ) : (
-    <Link to={`/FoodClickerReact/cafe/${id}`} state={{ pic, name, menu }}>
+    <Link to={`/cafe/${id}`} state={{ pic, name, menu }}>
       <img src={`./img/${pic}`} alt={name} />
     </Link>
   );
