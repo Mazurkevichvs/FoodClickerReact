@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, PopupForm, LogoutPopup } from '..';
 import './header.css';
@@ -8,26 +8,28 @@ import { setVisiblePopup } from '../../redux/slices/loginSlice';
 
 interface InitialState {
   loginSlice: {
-    isLogged: boolean,
-    userNickname: string,
-    isVisiblePopup: boolean
-  }
+    isLogged: boolean;
+    userNickname: string;
+    isVisiblePopup: boolean;
+  };
 }
 
 interface OrderItem {
-  count: number
+  count: number;
 }
 
-
 const Header: React.FC = () => {
-  const dispatch = useDispatch()
-  const [isVisibleLogOut, setIsVisibleLogOut] = useState<boolean>(false)
-  const { isLogged, userNickname, isVisiblePopup } = useSelector((state: InitialState) => state.loginSlice);
+  const dispatch = useDispatch();
+  const [isVisibleLogOut, setIsVisibleLogOut] = useState<boolean>(false);
+  const { isLogged, userNickname, isVisiblePopup } = useSelector(
+    (state: InitialState) => state.loginSlice,
+  );
   const { order } = useSelector(selectBasket);
   const togglePopup = () => {
-    dispatch(setVisiblePopup())
+    dispatch(setVisiblePopup());
   };
-  const totalCount: number = order.reduce((sum:number, item:OrderItem) => sum + item.count, 0);
+  const totalCount: number = order.reduce((sum: number, item: OrderItem) => sum + item.count, 0);
+  
   return (
     <>
       <header className="header">
@@ -55,11 +57,15 @@ const Header: React.FC = () => {
             {isLogged ? (
               <div className="header__login">
                 <div className="header__login__wrapper">
-            <div className="header__login__logo" onClick={() => setIsVisibleLogOut(!isVisibleLogOut)}>{userNickname}</div>
-                {isVisibleLogOut && <LogoutPopup setIsVisibleLogOut={setIsVisibleLogOut}/>}
+                  <div
+                    className="header__login__logo"
+                    onClick={() => setIsVisibleLogOut(!isVisibleLogOut)}>
+                    {userNickname}
+                  </div>
+                  {isVisibleLogOut && <LogoutPopup setIsVisibleLogOut={setIsVisibleLogOut} />}
                 </div>
                 <Link to="FoodClickerReact/basket">
-                  <div className='header__basket'>
+                  <div className="header__basket">
                     <img src="./img/koszyk.png" alt="basket" />
                     <span className="badge">{totalCount}</span>
                   </div>
@@ -76,7 +82,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       </header>
-      {isVisiblePopup && <PopupForm/>}
+      {isVisiblePopup && <PopupForm />}
     </>
   );
 };

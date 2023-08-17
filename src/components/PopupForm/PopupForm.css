@@ -69,10 +69,6 @@
   margin: 0 auto 10px auto;
   cursor: pointer;
 }
-.login__img img {
-  height: 50px;
-  width: 250px;
-}
 
 .modal__link {
   color: #888886;
@@ -137,10 +133,6 @@
   .login__img:last-child {
     margin-bottom: 20px;
   }
-  .login__img img {
-    height: 45px;
-    width: 225px;
-  }
 }
 
 @media (max-width: 680px) {
@@ -189,9 +181,5 @@
   }
   .login__img:last-child {
     margin-bottom: 10px;
-  }
-  .login__img img {
-    height: 30px;
-    width: 150px;
   }
 }

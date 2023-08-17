@@ -5,12 +5,14 @@ import { useSelector } from 'react-redux';
 import { selectBasket } from '../redux/slices/basketSlice';
 import { OrderItem } from '../@types/types';
 import Alert from '../components/Alert/Alert';
+import { useNavigate } from 'react-router-dom';
 
 interface GroupedOrder {
   [cafeName: string]: OrderItem[];
 }
 
 const Summary: React.FC = () => {
+  const navigate = useNavigate()
   const { order, totalSum } = useSelector(selectBasket);
   const [name, setName] = useState<string>('');
   const [surname, setSurname] = useState<string>('');
@@ -65,7 +67,8 @@ const Summary: React.FC = () => {
         setStreet('');
         setApartmentNumber('');
         setHouseNumber('');
-      }, 3000);
+        navigate('/FoodClickerReact/')
+      }, 1000);
     } else {
       setError(true);
     }

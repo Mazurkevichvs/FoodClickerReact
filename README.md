@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# FoodClicker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to FoodClicker, your ultimate destination for discovering the latest food sales and promotions in restaurants!
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+FoodClicker is a responsive web application built using Vite (Typescript), React.js and Firebase that brings you the best deals from restaurants in Świnoujście. Whether you're looking for discounts on your favorite dishes or want to explore new culinary experiences, FoodClicker has you covered!
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Browse through a variety of restaurants and their exclusive offers.
+- User-friendly interface designed for seamless navigation. 
+- Log in or register to create a personalized account.
+- Add or delete items to your basket for a convenient shopping experience.
+- Complete a "buy" flow to simulate the process of placing an order (please note: this feature is for demonstration purposes only and does not involve actual payment).
 
-- Configure the top-level `parserOptions` property like this:
+## Demo
+Check out the live demo of FoodClicker [here](https://mazurkevichvs.github.io/FoodClickerReact/)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Getting Started
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To run FoodClicker locally on your machine, follow these steps:
+
+- Clone this repository: `git clone https://github.com/Mazurkevichvs/FoodClickerReact.git`
+- Navigate to the project directory: `cd FoodClickerReact`
+- Install dependencies: `npm install`
+- Start the development server: `npm run dev`
+
+Contact
+For any inquiries or support, please contact Slava Mazurkevich at mazurkevichvs@gmail.com.
