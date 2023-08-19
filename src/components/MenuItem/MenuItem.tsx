@@ -42,7 +42,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ menuItem, cafeName }) => {
 
   return (
     <div className="menu__container">
-      <img className="menu__img" src={`../img/${menuItem.name}.png`} alt={menuItem.name} />
+      <img className="menu__img" src={`/FoodClickerReact/img/${menuItem.name}.png`} alt={menuItem.name} />
       <div className="menu__inner">
         <div className="menu__count">
           <div className="menu__increment" onClick={() => decreaseCount()}>

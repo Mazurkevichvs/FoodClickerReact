@@ -11,7 +11,7 @@ const Slider:React.FC = () => {
         slides.push(
             <SwiperSlide className="swiper-slide"
             key={`slide-${i}`}>
-                <img src={`./img/img_slider${i}.png`} alt="food"></img>
+                <img src={`/FoodClickerReact/img/img_slider${i}.png`} alt="food"></img>
             </SwiperSlide>
         )
     }

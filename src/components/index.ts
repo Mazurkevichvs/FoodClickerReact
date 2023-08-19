@@ -9,7 +9,6 @@ export {default as Slider} from './slider/Slider';
 export {default as Input} from './Input/Input';
 export {default as BasketItem} from './BasketItem/BasketItem';
 export {default as LogoutPopup} from './LogoutPopup/LogoutPopup';
-export {default as Loader} from './Loader/Loader';
 export {default as PaymentMethod} from './PaymentMethod/PaymentMethod';
 export {default as DeliveryMethod} from './DeliveryMethod/DeliveryMethod';
 export {default as SummaryListItem} from './SummaryListItem/SummaryListItem';

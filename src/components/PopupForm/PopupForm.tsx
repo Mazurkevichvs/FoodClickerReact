@@ -1,7 +1,7 @@
-import React, { useRef, useEffect, useState, FormEvent} from 'react';
+import React, { useRef, useEffect, useState, FormEvent } from 'react';
 import { auth, googleProvider } from '../../config/firebase';
 import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import './PopupForm.css';
@@ -10,16 +10,15 @@ import { setIsLogged, setVisiblePopup } from '../../redux/slices/loginSlice';
 import Alert from '../Alert/Alert';
 
 const PopupForm: React.FC = () => {
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
-  const [error, setError] = useState<boolean>(false)
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<boolean>(false);
   const dispatch = useDispatch();
   const modal = useRef<HTMLDivElement>(null);
-  const location = useLocation();
 
   const togglePopup = () => {
-    dispatch(setVisiblePopup())
-  }
+    dispatch(setVisiblePopup());
+  };
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
@@ -28,21 +27,21 @@ const PopupForm: React.FC = () => {
     }
   };
 
-  const clickOutside = (e:MouseEvent) => {
+  const clickOutside = (e: MouseEvent) => {
     if (modal.current && !modal.current.contains(e.target as Node)) {
       togglePopup();
     }
   };
 
   const logIn = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password )
+      await signInWithEmailAndPassword(auth, email, password);
       dispatch(setIsLogged(true));
-      setError(false)
-      togglePopup();   
+      setError(false);
+      togglePopup();
     } catch (err) {
-      setError(true)
+      setError(true);
     }
   };
 
@@ -63,21 +62,34 @@ const PopupForm: React.FC = () => {
           </div>
           <div className="modal__body">
             <form className="modal__form" onSubmit={logIn}>
-              <Input label={'Login lub E-Mail:'} id={'login'} name={'login'} value={email} required={true} onChange={(e) => setEmail(e.target.value)}/>
-              <Input label={'Hasło:'} type={'password'} id={'password'} name={'password'} value={password} required={true} onChange={(e) => setPassword(e.target.value)} />
-              {error && <Alert alertMessage='Nieprawidłowy login lub hasło' status={false}/>}
-              <p className="modal__link">
-                Nie pamiętasz hasła?
-              </p>
+              <Input
+                label={'Login lub E-Mail:'}
+                id={'login'}
+                name={'login'}
+                value={email}
+                required={true}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Input
+                label={'Hasło:'}
+                type={'password'}
+                id={'password'}
+                name={'password'}
+                value={password}
+                required={true}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {error && <Alert alertMessage="Nieprawidłowy login lub hasło" status={false} />}
+              <p className="modal__link">Nie pamiętasz hasła?</p>
               <div className="modal__buttons">
                 <Button name={'Zaloguj się'} type={'submit'} />
                 <p>lub</p>
                 <Link to={'/registration'}>
-                  <Button name={'Zarejestruj się'} onClick={togglePopup} type={'button'}/>
+                  <Button name={'Zarejestruj się'} onClick={togglePopup} type={'button'} />
                 </Link>
               </div>
               <div className="login__img" onClick={signInWithGoogle}>
-                <img src={location.pathname.includes('cafe') ? "../img/googlesingup.png" :"./img/googlesingup.png"} alt="Sing up with Google" />
+                <img src={'/FoodClickerReact/img/googlesingup.png'} alt="Sing up with Google" />
               </div>
             </form>
           </div>

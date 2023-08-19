@@ -9,7 +9,7 @@ interface SummaryListItemProps {
 }
 
 const SummaryListItem: React.FC<SummaryListItemProps> = ({cafeName, orderItems}) => {
-  const summaryItem = orderItems.map((el) => <SummaryItem menuItemName={el.menuItemName} count={el.count} price={el.price} itemSum={el.itemSum}/>)
+  const summaryItem = orderItems.map((el) => <SummaryItem key={el.id} menuItemName={el.menuItemName} count={el.count} price={el.price} itemSum={el.itemSum}/>)
 
   return (
     <div className="order__info summary__order__info">
