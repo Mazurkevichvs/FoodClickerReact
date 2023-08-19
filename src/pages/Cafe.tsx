@@ -10,21 +10,15 @@ import { AppDispatch, RootState } from '../redux/store';
 import { fetchCafes } from '../redux/slices/cafeSlice';
 import ContentLoader from 'react-content-loader';
 
-interface InitialState {
-  loginSlice: {
-    isLogged: boolean;
-  };
-}
-
 const Cafe: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { id } = useParams();
-  const { isLogged } = useSelector((state: InitialState) => state.loginSlice);
+  const { id } = useParams<{ id: string }>();
+  const { isLogged } = useSelector((state: RootState) => state.loginSlice);
   const { cafes, status } = useSelector((state: RootState) => state.cafeSlice);
   const cafeData = cafes.find((cafe) => cafe.id === id);
   const { pic, name, menu } = cafeData || {};
   const menuItem = menu?.map((el: MenuItemType) => (
-    <MenuItem key={el.id} menuItem={el} cafeName={el.name} />
+    <MenuItem key={el.id} menuItem={el} cafeName={name || ''} />
   ));
 
   useEffect(() => {

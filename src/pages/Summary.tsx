@@ -12,7 +12,7 @@ interface GroupedOrder {
 }
 
 const Summary: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { order, totalSum } = useSelector(selectBasket);
   const [name, setName] = useState<string>('');
   const [surname, setSurname] = useState<string>('');
@@ -27,6 +27,9 @@ const Summary: React.FC = () => {
   const [summaryOrder, setSummaryOrder] = useState<GroupedOrder>({});
   const [error, setError] = useState<boolean>(false);
   const [isPaid, setIsPaid] = useState<boolean>(false);
+  const nameValidation = /^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ\s]+$/;
+  const phoneNumberValidation = /^[0-9]{9}$/;
+  const numberValidation = /^[0-9]+$/;
 
   useEffect(() => {
     const groupedOrder: GroupedOrder = order.reduce((result, orderItem) => {
@@ -35,7 +38,6 @@ const Summary: React.FC = () => {
         result[cafeName] = [];
       }
       result[cafeName].push({ cafeName, menuItemName, price, count, id, itemSum });
-
       return result;
     }, {} as GroupedOrder);
     setSummaryOrder(groupedOrder);
@@ -45,18 +47,35 @@ const Summary: React.FC = () => {
     setPaymentOption(name);
   };
 
+  const validateFields = () => {
+    if (!nameValidation.test(name)) {
+      setError(true);
+      return false;
+    }
+    if (!nameValidation.test(surname)) {
+      setError(true);
+      return false;
+    }
+    if (!phoneNumberValidation.test(phoneNumber)) {
+      setError(true);
+      return false;
+    }
+    if (deliveryOption === 'delivery') {
+      if (!nameValidation.test(street) || !nameValidation.test(houseNumber) || !numberValidation.test(apartmentNumber)) {
+        setError(true);
+        return false;
+      }
+    }
+    if (!paymentOption) {
+      setError(true);
+      return false;
+    }
+    setError(false);
+    return true;
+  };
+
   const handleSubmitPayment = () => {
-    if (
-      (deliveryOption === 'takeaway' && name && surname && phoneNumber && paymentOption) ||
-      (deliveryOption === 'delivery' &&
-        name &&
-        surname &&
-        phoneNumber &&
-        paymentOption &&
-        street &&
-        apartmentNumber && houseNumber)
-    ) {
-      setError(false);
+    if (validateFields()) {
       setIsPaid(true);
       setTimeout(() => {
         setIsPaid(false);
@@ -67,11 +86,9 @@ const Summary: React.FC = () => {
         setStreet('');
         setApartmentNumber('');
         setHouseNumber('');
-        navigate('/')
+        navigate('/');
       }, 1000);
-    } else {
-      setError(true);
-    }
+    }  
   };
 
   const summaryOrderItem = Object.entries(summaryOrder).map(([cafeName, orderItems]) => (
