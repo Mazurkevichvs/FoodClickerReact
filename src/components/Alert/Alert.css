@@ -25,3 +25,9 @@
     color: #e30613;
     border: 1px solid #e30613;
 }
+
+@media (max-width: 680px) {
+    .alert {
+        margin-top: 15px;
+    }
+}

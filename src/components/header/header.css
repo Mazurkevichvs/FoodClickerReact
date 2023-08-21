@@ -96,6 +96,16 @@
   font-weight: bold;
 }
 
+@media (max-width: 950px) {
+  .inst__logo {
+    margin-top: 15px;
+  }
+  .link__food {
+    font-size: 20px;
+    
+  }
+}
+
 @media (max-width: 680px) {
   .header__inner {
     flex-direction: column;

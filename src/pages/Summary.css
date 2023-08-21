@@ -88,12 +88,6 @@
     font-size: 26px;
 }
 
-.btn__summary__pay {
-    display: block;
-    margin: 0 auto;
-    margin-top: 15px;
-}
-
 .summary__form__inside {
     display: flex;
     justify-content: space-between;
@@ -114,4 +108,23 @@
 
 .summary__payment__method > .payment__method:nth-last-of-type(-n+2) {
     margin-bottom: 0px;
+}
+
+@media (max-width: 680px) { 
+    .summary__inner__container {
+        width: 100%;
+    }
+    .summary__payment {
+        width: 100%;
+        position: inherit;
+        margin-top: 20px;
+    }
+
+    .summary__inner__wrapper {
+        flex-direction: column;
+    }
+    .summary__inner__item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
