@@ -13,12 +13,7 @@ interface BasketSliceState {
 }
 
 const initialState:BasketSliceState = {
-    order: [{cafeName: 'Batista',
-      menuItemName: 'feta',
-      price: 12,
-      count: 2,
-      id: '1',
-      itemSum: 24}],
+    order: [],
     totalSum: 0
 }
 
